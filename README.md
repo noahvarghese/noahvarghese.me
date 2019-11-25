@@ -1,5 +1,9 @@
 # noahvarghese.me
 Personal website
+<<<<<<< HEAD
+=======
+
+>>>>>>> e634ca702c0bae0980a5e29fa5d070273d70f55f
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
