@@ -1,14 +1,37 @@
+@font-face {
+  font-family: 'Squeaky Chalk';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/font/SqueakyChalkSound.eot'); /* IE9 Compat Modes */
+  src: local('Squeaky Chalk'), local('SquakyChalkSounds'),
+       url('./assets/font/SqueakyChalkSound.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/font/SqueakyChalkSound.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/font/SqueakyChalkSound.woff') format('woff'), /* Modern Browsers */
+       url('./assets/font/SqueakyChalkSound.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/font/SqueakyChalkSound.svg') format('svg'); /* Legacy iOS */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Squeaky Chalk';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./assets/img/chalkboard.jpeg');
+  background-repeat: no-repeat;
+  /* cover does not work on mobile */
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  line-height: 1.4;
+  color: #fff;
 }

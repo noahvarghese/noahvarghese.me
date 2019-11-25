@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Nav from './components/layout/Nav'
-import HamburgerMenu from './components/layout/HamburgerMenu'
-import Welcome from './components/pages/Welcome';
-import About from './components/pages/About';
-import Experience from './components/pages/Experience';
-import Contact from './components/layout/Contact';
+import '../assets/css/Home.css';
 
-import Login from './components/pages/Login';
-
-import './App.css';
-
-class App extends Component {
+class Home extends Component {
 
   audio;
 
@@ -54,26 +44,9 @@ class App extends Component {
         }
         aboutText.style.opacity = 1;
     }, 7000);
-    return (
-      <Router>
-        <div className="App">
-          <Route path="/" render={props => (
-            <React.Fragment>
-              <Nav changeNavigation={this.stopAnimation.bind(displayWelcome, displayAbout)}/>
-              <HamburgerMenu changeNavigation={this.stopAnimation.bind(displayWelcome, displayAbout)}/>
-              <Welcome />
-              <About />
-              <Experience />
-              <Contact changeNavigation={this.stopAnimation.bind(displayWelcome, displayAbout)}/>
-            </React.Fragment>
-          )} />
-          <Route path="/login" render={props => (
-            <Login />
-          )} />
-        </div>
-      </Router>
-    );
-  }
+    
+        return;
+    }
 }
 
-export default App;
+export default Home;

@@ -1,0 +1,92 @@
+
+/* Responsible for menu animation from hamburger to X */
+.hamburgerContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 5vw;
+  display: none;
+  z-index: 2;
+}
+ 
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+  /* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+  
+  /* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+  
+  /* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* Basic styles for when nav is not displayed */
+.navLinks {
+  position: relative;
+  top: 15vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.navLinks a {
+  display: block;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-top: 1px dashed #333;
+  border-bottom: 1px dashed #333;
+}
+
+.nav {
+  height: 0;
+  width: 100vw;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0);
+  overflow-x: hidden;
+  transition: 0.5s;
+  position: fixed;
+}
+
+.showNav {
+  height: 100vh;
+}
+
+.display {
+  display: inline-block;
+}
+
+/*  Display hamburger when screen is small enough */
+
+@media only screen and (max-width: 420px), (max-height: 850px) {
+  .hamburgerContainer {
+      display: inline-block;
+  }
+
+  .nav .contactStyle hr {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 320px), (max-height: 575) {
+  
+  .nav .contactStyle {
+    position: absolute;
+    bottom: 5vh;
+  }
+}

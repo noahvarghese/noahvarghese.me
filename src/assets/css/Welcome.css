@@ -1,0 +1,23 @@
+.animateText {
+  width: 90vw;
+    font-size: 1.5em;
+    padding-top: 10vh;
+    padding-left: 10vw;
+}
+
+.animateText > p {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80vw;
+  }
+  
+  @keyframes type{ 
+    from { width: 0;}
+  }
+  
+  @media only screen and (max-width: 775px) {
+    .animateText {
+      font-size: 1em;
+    }
+  }
+  
