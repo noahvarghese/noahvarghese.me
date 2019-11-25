@@ -8,10 +8,7 @@ class About extends Component {
             <div className="aboutStyle">
               <h1>About</h1>
               <hr />
-              <br />
-              <p>Noah found his passion for computers after high school. It wasn’t until he was studying business at McMaster that he got his first computer. As soon as he saw his first terminal and entered his first commands using the Bash shell, he was hooked.</p>
-              <br />
-              <p>Not long after, he fell down the rabbit hole that was GNU/Linux, compiled his first kernel, and discovered he wanted to pursue software development and computer science as a career.</p>
+              <p class="about">Hello, my name is Noah Varghese.<span>I am a full stack developer based in Oakville Ontario. I'm extremely passionate about web development and design, as well as helping businesses build and improve their online presence. I enjoy programming, playing guitar, exploring and pushing the limits.</span></p>
             </div>
         </React.Fragment>
     );
