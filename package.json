@@ -15,7 +15,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://www.noahvarghese.me/me/public_html/",
+  "homepage": "http://noahvarghese.me",
   "eslintConfig": {
     "extends": "react-app"
   },
