@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import '../../assets/css/Contact.css';
 
 class Contact extends Component {
-
-  clickSecret = (e) => {
-    console.log("working");
-    e.preventDefault();
-  };
 
   render() {
     return (
@@ -28,7 +22,7 @@ class Contact extends Component {
                 <a className="imageStyle" target="_blank" rel="noopener noreferrer" href="https://github.com/noahvarghese">
                 <img alt="github" src="./assets/img/github.png"/>
                 </a>
-              <Link onClick={(e) => this.clickSecret()} className="copyrightStyle" style={{display: "block", pointer:"auto"}} to="/login/">&copy; 2019 Noah Varghese</Link>
+              <p className="copyrightStyle">&copy; 2019 Noah Varghese</p>
               </div>
             </footer>
         </React.Fragment>

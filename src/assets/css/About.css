@@ -1,14 +1,15 @@
 
 .aboutStyle {
-    display: none;
-    opacity: 0;
-    width: 50vw;
-    font-size: 1.5em;
-    padding-top: 8vh;
-    padding-left: 10vw;
-    margin-bottom: 1vh;
-  }
+  display: none;
+  opacity: 0;
+  width: 50vw;
+  font-size: 1.5em;
+  padding-top: 8vh;
+  padding-left: 10vw;
+  margin-bottom: 1vh;
+}
 
+<<<<<<< HEAD
   .aboutStyle p {
     margin-top: 1em;
   }
@@ -17,11 +18,16 @@
     display: block;
     margin-top: 1em;
   }
+=======
+.aboutStyle p {
+  margin-top: 1em;
+}
+>>>>>>> testing
 
-  @media only screen and (max-width: 768px), (max-height: 1024px), (orientation: portrait) {
-    
-    .aboutStyle {
-      width: 90vw;
-    }
+@media only screen and (max-width: 768px), (max-height: 1024px), (orientation: portrait) {
+  
+  .aboutStyle {
+    width: 90vw;
   }
+}
   

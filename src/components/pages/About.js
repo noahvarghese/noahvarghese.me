@@ -8,7 +8,7 @@ class About extends Component {
             <div className="aboutStyle">
               <h1>About</h1>
               <hr />
-              <p>My name is Noah Varghese. <span>I am a full stack developer with a passion for web design and development. I'm looking to help businesses build and improve their online presence. My passions are programming, playing guitar, exploring and pushing the limits.</span></p>
+              <p class="about">Hello, my name is Noah Varghese.<span>I am a full stack developer based in Oakville Ontario. I'm extremely passionate about web development and design, as well as helping businesses build and improve their online presence. I enjoy programming, playing guitar, exploring and pushing the limits.</span></p>
             </div>
         </React.Fragment>
     );
