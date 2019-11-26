@@ -15,11 +15,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
   "homepage": "http://noahvarghese.me",
-=======
-  "homepage": "http://noahvarghese.me.s3-website.ca-central-1.amazonaws.com/",
->>>>>>> testing
   "eslintConfig": {
     "extends": "react-app"
   },
