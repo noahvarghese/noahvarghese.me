@@ -50,8 +50,6 @@ class Experience extends Component {
                   <li>BootStrap 4</li>
                   <li>React</li>
                   <li>jQuery</li>
-                  <li>ASP.NET MVC</li>
-                  <li>Entity Framework</li>
                 </ul>
                 </div>
                 <br />
@@ -59,6 +57,14 @@ class Experience extends Component {
                 <h4>Databases</h4>
                 <ul>
                   <li>SQL (MSSQL, mySQL)</li>
+                </ul>
+                <br />
+                </div>
+                <div>
+                <h4>Tools</h4>
+                <ul>
+                  <li>Git</li>
+                  <li>AWS</li>
                 </ul>
                 <br />
                 </div>
