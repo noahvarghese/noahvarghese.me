@@ -9,7 +9,6 @@
   margin-bottom: 1vh;
 }
 
-<<<<<<< HEAD
   .aboutStyle p {
     margin-top: 1em;
   }
@@ -18,11 +17,6 @@
     display: block;
     margin-top: 1em;
   }
-=======
-.aboutStyle p {
-  margin-top: 1em;
-}
->>>>>>> testing
 
 @media only screen and (max-width: 768px), (max-height: 1024px), (orientation: portrait) {
   
