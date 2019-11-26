@@ -9,8 +9,13 @@
     margin-bottom: 1vh;
   }
 
-  .aboutStyle p:nth-child(1) {
-    padding-top: 2vh;
+  .aboutStyle p {
+    margin-top: 1em;
+  }
+
+  .aboutStyle span {
+    display: block;
+    margin-top: 1em;
   }
 
   @media only screen and (max-width: 768px), (max-height: 1024px), (orientation: portrait) {
