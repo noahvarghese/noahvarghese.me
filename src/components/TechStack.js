@@ -56,22 +56,24 @@ export default function TechStack() {
             <img alt="git" src="/img/git.png" className={classes.img}/>
             <img alt="javascript" src="/img/js.png" className={classes.img}/>
             <img alt="gatsby" src="/img/gatsby.png" className={classes.img}/>
-            <img alt="react" src="/img/react.jpeg" className={classes.img}/>
+            <img alt="react" src="/img/react.png" className={classes.img}/>
             <img alt="aws" src="/img/aws.png" className={classes.img}/>
             <img alt="netlify" src="/img/netlify.png" className={classes.imgSmall}/>
             <img alt="heroku" src="/img/heroku.png" className={classes.imgSmall}/>
             <img alt="c#" src="/img/csharp.svg" className={classes.img}/>
             <img alt="xamarin" src="/img/xamarin.svg" className={classes.img}/>
             <img alt="dot net" src="/img/netCore.png" className={classes.img}/>
-            <img alt="selenium" src="/img/selenium.png" className={classes.imgSmall}/>
+            <img alt="selenium" src="/img/selenium.png" className={classes.img}/>
             <img alt="mysql" src="/img/mysql.png" className={classes.imgSmall}/>
             <img alt="microsoft sql server" src="/img/mssql.png" className={classes.imgSmall}/>
             <img alt="postgresql" src="/img/postgresql.png" className={classes.imgSmall}/>
-            <img alt="php" src="/img/php.png" className={classes.imgSmall}/>
+            <img alt="php" src="/img/php.svg" className={classes.imgSmall}/>
             <img alt="laravel" src="/img/laravel.png" className={classes.imgSmall}/>
             <img alt="code igniter" src="/img/codeigniter.svg" className={classes.img}/>
             <img alt="css" src="/img/css3.svg" className={classes.img}/>
             <img alt="html" src="/img/html5.png" className={classes.img}/>
+            <img alt="bootstrap" src="/img/bootstrap.png" className={classes.img}/>
+            <img alt="jquery" src="/img/jquery.png" className={classes.img}/>
         </div >
     );
 }

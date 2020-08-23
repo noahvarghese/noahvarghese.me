@@ -2,7 +2,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 25vh;
+    height: 35vh;
     width: 101vw;
     z-index: -2;
 }
@@ -11,7 +11,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 25vh;
+    height: 35vh;
     width: 101vw;
     z-index: -1;
 }
