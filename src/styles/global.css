@@ -2,5 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Roboto !important;
+    font-family: Montserrat;
+}
+
+html {
+    background-color: #f8f8ff;
 }
