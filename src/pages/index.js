@@ -43,10 +43,8 @@ const useStyles = makeStyles({
     flexDirection: "row",
     flexWrap: "wrap-reverse",
     alignItems: "center",
-    justifyContent: "space-between"
-  },
-  TechStack: {
-    marginTop: "4em"
+    justifyContent: "space-between",
+    marginBottom: "10em"
   },
   container: {
       marginTop: "2em",

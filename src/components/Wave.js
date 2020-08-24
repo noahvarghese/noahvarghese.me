@@ -17,6 +17,7 @@ export default class Wave extends Component {
         const c1 = canvas1.getContext('2d');
         const c2 = canvas2.getContext('2d');
 
+        /*
         const wave1 = {
             y: 100,
             length: 0.02,
@@ -32,13 +33,29 @@ export default class Wave extends Component {
             frequency: 0.014,
             color: "#000000"
         }
+        */
+        const wave1 = {
+            y: 100,
+            length: 0.02,
+            amplitude: 45,
+            frequency: 0.012,
+            color: "#2196f3"
+        }
+
+        const wave2 = {
+            y: 75,
+            length: 0.02,
+            amplitude: 45,
+            frequency: -0.5,
+            color: "#000000"
+        }
 
         let increment1 = wave1.frequency;
         let increment2 = wave2.frequency;
 
         function animate() {
             
-            requestAnimationFrame(animate);
+            //requestAnimationFrame(animate);
 
             c1.fillStyle = wave1.color;
             c1.clearRect(0, 0, canvas1.width, canvas1.height);
