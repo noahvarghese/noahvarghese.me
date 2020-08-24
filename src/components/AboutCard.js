@@ -8,9 +8,6 @@ const useStyles = makeStyles({
     root: {
         minWidth: 275,
         width: "40em",
-        position: "absolute",
-        top: "18em",
-        left: "20vw",
     },
     bullet: {
         display: 'inline-block',
@@ -30,10 +27,10 @@ const useStyles = makeStyles({
     link: {
         color: "#2196f3",
         fontFamily: "Roboto",
+        textDecoration: "none",
         '&:hover': {
             color: "black",
             cursor: "pointer",
-            textDecoration: "none"
         }
     }
 });
@@ -65,7 +62,7 @@ export default function AboutCard() {
                     When I'm not in front of my computer you can find me playing the guitar, or hiking through whatever forrest I can find.
                 </Typography>
                 <Typography variant="body2" component="p" className={classes.pos}>
-                    If you would like to collaborate or inquire about my services feel free to <Link to="/contact/" className={classes.link}>contact me.</Link>
+                    If you would like to collaborate or inquire about my services feel free to <a href="/contact/" className={classes.link}>contact me.</a>
                 </Typography>
             </CardContent>
         </Card>

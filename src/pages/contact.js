@@ -89,8 +89,8 @@ export default function Contact() {
                     </div>
                 </form>
                 <div className={classes.imageContainer}>
-                    <Link to="https://github.com/noahvarghese"><GitHubIcon className={classes.image}/></Link>
-                    <Link to="https://linkedin.com/in/varghese-noah/"><LinkedInIcon className={classes.image}/></Link>
+                    <Link to="https://github.com/noahvarghese" target="_blank"><GitHubIcon className={classes.image}/></Link>
+                    <Link to="https://linkedin.com/in/varghese-noah/" target="_blank"><LinkedInIcon className={classes.image}/></Link>
                     
                 </div>
             </Card>

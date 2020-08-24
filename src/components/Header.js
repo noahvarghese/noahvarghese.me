@@ -22,6 +22,9 @@ const useStyles = makeStyles({
         color: "white",
         textDecoration: "none",
         fontSize: "2em",
+        '&:hover': {
+            color: "#2196f3"
+        }
     }
 });
 
