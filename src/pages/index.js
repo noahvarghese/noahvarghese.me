@@ -21,16 +21,6 @@ const useStyles = makeStyles({
     right: 0,
     margin: "auto"
   },
-  profilePic: {
-    borderRadius: "50%",
-    height: "25em",
-    width: "25em",
-    backgroundColor: "rgba(0,0,0,0.75)",
-    overflow: "hidden",
-    boxShadow: "2em, 2em, 3em, #888888",
-    zIndex: 5,
-    float: "right",
-  },
 
   profileImg: {
       marginTop: "-2em",
@@ -38,7 +28,7 @@ const useStyles = makeStyles({
       boxShadow: "2em, 2em, 3em, #888888",
   },
   me: {
-    width: "80%",
+    width: "100%",
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap-reverse",
@@ -90,10 +80,7 @@ export default function Home() {
     <Header />
     <div className={classes.root}>
       <div className={classes.me}>
-        <AboutCard className={classes.about}/>
-        <div className={classes.profilePic}>
-          <img alt="profile picture" src="/img/profilePic.jpg" className={classes.profileImg}/>
-        </div>
+        <AboutCard/>
       </div>
         <div className={classes.TechStack}>
             <Typography className = {classes.title} color = "textSecondary"gutterBottom> Tools and Technology I Have Used </Typography> 
@@ -121,6 +108,8 @@ export default function Home() {
                 <img alt="html" src="/img/html5.png" className={classes.imgSmall}/>
                 <img alt="bootstrap" src="/img/bootstrap.png" className={classes.img}/>
                 <img alt="jquery" src="/img/jquery.png" className={classes.img}/>
+                <img alt="python" src="/img/python.svg" className={classes.img}/>
+                <img alt="ruby" src="/img/ruby.png" className={classes.img}/>
             </div>
         </div>
     </div>
