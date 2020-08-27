@@ -14,6 +14,5 @@ deploy:
     secure: N3+6r9FjJ2DCLA+m9Qg6n7F1rKBaTjuCnZyqdKn/ZmN9g1k+yI/kHicCe9zFmojQyTH4jz6esWxuhl74iRcosDszOwM2mXrJAVMBVhwQCRdvkF2/gdfTm4yNtymVZwCVU87zWftN4OW7uUfHZIqNoswRMnHH27o1D6xzSHHQ8MpCJI7DkqsWB8adaDNRXwQkBL/NqXjRI7bWe0xevAAIQoB+TmU/B4w7XETdg8JRd69OKxxsveSRAyAmgezmrXA+NxSzLY53JDJP1hX99hTqUNq24/UtLDHNHNlh+0plEs78psTVeugzX0Y3hA/DAb/azGE5yXS5c/R274qzWga8yDE6gThrxzaMuY8hV6tPEtwlnh9Ppo3maNmjk6b2ech4PfPWCuiPhLFxxqfzt2LjcOj9wW39w8RahsqZq77qMTz3+81MA1/iacro1ymiaMkMfE+xTBTE5cPnMEOfBqNtJSY1h8odMigAkUGktVvX29MnklpUsLjBrps+7q3aE6MFcXMk4tRhxuTEPhIYyqEzhPn6vbsS0FxEJaBHBmNtxWeEMTAw95rA0I7J/HzbbzYEIsl808MFp7fbwbh/9ykgRGjigjkBNJlk6oEgAY38MB4nUZ61l43KTawf8hdcLt05mxsLeMivmHLSsD6FdTrVSWsKbLml7C+azgxS+j6thBs=
   bucket: "noah-portfolio"
   endpoint: http://noah-portfolio.s3-website.ca-central-1.amazonaws.com
-  skip_cleanup: true
   acl: public_read
   local_dir: public
