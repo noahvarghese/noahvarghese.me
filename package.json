@@ -11,7 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby-plugin-s3 deploy"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -21,6 +22,7 @@
     "classnames": "^2.2.6",
     "clsx": "^1.1.1",
     "gatsby": "^2.24.47",
+    "gatsby-plugin-s3": "^0.3.5",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-remark": "^2.8.28",
