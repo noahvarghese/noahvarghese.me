@@ -67,6 +67,11 @@ const useStyles = makeStyles(({transitions}) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
+    selected: {
+        color: "#2196f3 !important",
+        textDecoration: "none",
+        fontSize: "2em",
+    }
 }));
 
 export default function Header() {
@@ -125,7 +130,14 @@ export default function Header() {
                             <nav className={classes.nav}>
                                 <ul className={classes.ul}>
                                     {data.site.siteMetadata.menuLinks.map((item) => {
-                                        return <li className={classes.li} key={item.name}><a href={item.link} className={classes.a}>{item.name.toUpperCase()}</a></li>
+                                        if ( item.link == window.location.pathname )
+                                        {
+                                            return <li className={classes.li} key={item.name}><a href={item.link} className={classes.selected}>{item.name.toUpperCase()}</a></li>
+                                        }
+                                        else
+                                        {
+                                            return <li className={classes.li} key={item.name}><a href={item.link} className={classes.a}>{item.name.toUpperCase()}</a></li>
+                                        }
                                     })}
                                 </ul>
                             </nav>
