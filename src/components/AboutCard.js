@@ -16,7 +16,8 @@ import {
     Link 
 } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ShareIcon from '@material-ui/icons/Share';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
     root: {
@@ -37,6 +38,7 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
         flexDirection: 'row',
         paddingTop: spacing(2),
       },
+      zIndex: 1
     },
     media: {
       width: '88%',
@@ -113,9 +115,9 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
 export default function AboutCard() {
 
     const classes = useStyles();
-    const theme = useTheme();
     const shadowStyles = useOverShadowStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const isActive = useMediaQuery('(max-width: 960px)');
   
     const handleExpandClick = () => {
       setExpanded(!expanded);
@@ -139,9 +141,6 @@ export default function AboutCard() {
                     </Typography>
             </CardContent>
             <CardActions className={classes.icons}>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
                 <IconButton
                     className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded,
@@ -149,20 +148,21 @@ export default function AboutCard() {
                     onClick={handleExpandClick}
                     aria-expanded={expanded}
                     aria-label="show more">
-                    <ExpandMoreIcon />
+                    { isActive && <ExpandMoreIcon /> }
+                    { ! isActive && <ChevronRightIcon />}
                 </IconButton>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography variant="body2" component="p" className={classes.pos}>
-                        I learned software development through Mohawk College, and through my own projects.
+                        I learned software development from Mohawk College, and through my own projects.
                         My main interests lie in both mobile and web app development, as well as dev ops and automation.
                     </Typography>
                     <Typography variant="body2" component="p" className={classes.pos}>
                         When I'm not in front of my computer you can find me playing the guitar, or hiking through whatever forrest I can find.
                     </Typography>
                     <Typography variant="body2" component="p" className={classes.pos}>
-                        If you would like to collaborate or inquire about my services feel free to <Link to="/contact/" className={classes.link}>contact me.</Link>
+                        If you would like to collaborate or inquire about my services feel free to <Link href="/contact/" className={classes.link}>contact me.</Link>
                     </Typography>
                 </CardContent>
             </Collapse>
