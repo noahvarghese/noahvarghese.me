@@ -15,5 +15,4 @@ deploy:
   bucket: "noah-portfolio"
   endpoint: http://noah-portfolio.s3-website.ca-central-1.amazonaws.com
   acl: public_read
-  #local_dir: public
   
