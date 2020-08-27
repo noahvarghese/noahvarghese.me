@@ -7,12 +7,6 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: `noahvarghese.me`
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/markdown-pages`,
