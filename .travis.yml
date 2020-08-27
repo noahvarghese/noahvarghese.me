@@ -1,7 +1,8 @@
 language: node_js
 node_js:
   - 14.8.0
-install: gatsby build
+install: npm
+script: gatsby build
 deploy:
   provider: s3
   secret_access_key:
@@ -9,3 +10,6 @@ deploy:
   accesss_key_id:
     secure: nqJY2Qc+4IwCc7IdbMhfwdzQiwkcnMqKgn45U+rBPg8DRHd/v8Xd6sd05vXiRCxmtV2DB3aU3aM5PfnJFpgSVG+yDSW+rySe+77XLzIe9O/urIQy4gXc+68jKXYsHVIPyRgjOPhMO7d5toaMOdHPHTXt7myGNw1e7ITcJCnSuK4TY+q3pxTL5rOMxS3FR2qOE/Uwt3pedG9iPhWJem1WZtwmb/mfUW6cql7RbT8paD7CC4QbVuDqUwl7TMBbuWlGIipsKnukTDPma/2SvzU6CBYy1nkwpvQ1IipR9EtinC2I+OPUPObDUGNsUFFXxLZGpYhP+EVRdhOTObQhTe/VRDRbCGsovvFRuMLaCG3Jhi691Za20LpFFKgVL7k54sfKh+DDnL6WdESvskeH+aH2vnm7CBW3zPJ+2zFqo93YdJMCnbYxP2b6VlT+vnUnCxRih7JhkKAe9j6srRtH6J1zw0qp1HUmFSEj4nIFNy+eIKiekU3tvl46cMdedo23b7yVJaBl7frl7eDeFLN/po0YqY0JUwLPXLD3G70hXoLH36qyZIN2oR24PyM6iRD+5bTOGe/3lVm+CzS69L/QLHVaB8k3nGVOS0FWJYKE5SrT0mXqOtybxiBo06cY91vD8LwqC66IjtDCUW2XsqErU5YvqI4qji2xOkai4jZPjNCsEno=
   bucket: "noahvarghese.me"
+  skip_cleanup: true
+  acl: public_read
+  local_dir: public
