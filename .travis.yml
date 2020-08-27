@@ -16,3 +16,4 @@ deploy:
   skip_cleanup: true
   acl: public_read
   local_dir: public
+  endpoint: http://noahvarghese.me.s3-website.ca-central-1.amazonaws.com
