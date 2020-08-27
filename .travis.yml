@@ -10,7 +10,7 @@ deploy:
   provider: s3
   access_key_id: $AWS_ID
   secret_access_key: $AWS_KEY
-  bucket: "noah-portfolio"
+  bucket: noah-portfolio
   endpoint: http://noah-portfolio.s3-website.ca-central-1.amazonaws.com
   acl: public_read
   region: ca-central-1
