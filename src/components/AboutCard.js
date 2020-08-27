@@ -4,7 +4,6 @@ import {
 } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
-import { useTheme } from '@material-ui/core/styles';
 import { 
     Card, 
     CardMedia, 

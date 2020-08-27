@@ -6,45 +6,70 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Header from "../components/Header";
 import Wave from "../components/Wave";
+import Project from "../components/Project";
+import { graphql } from "gatsby";
 
 const useStyles = makeStyles({
     projects: {
 
     },
     container: {
-        width: "60vw",
-        height: "65vh",
-        position: "absolute",
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        margin: "auto"
+        height: "100%",
+        width: "90%",
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignContent: "space-between",
+        margin: "auto",
+        position: "relative"
     },
-    hr: {
-        borderWidth: "2px"
-    },
-    header: {
-        color: "white"
-    }
 });
 
-export default function Projects() {
+const Projects = ({ 
+    data: {
+        allMarkdownRemark: { edges },
+    },
+}) => {
+    const projects = edges
+    .map(edge => <Project key={edge.node.id} project={edge.node} />);
+
 
     const classes = useStyles();
-    
+
     return (
         <>
             <Wave/>
             <Header/>
             <div className={classes.container}>
-                <h1 className={classes.header}>MY PROJECTS</h1>
-                <hr className={classes.hr}/>
-                <div className={classes.projects}>
-
-                </div>
+                { projects }
             </div>
             
         </>
     )
 }
+
+export default Projects;
+
+
+export const projectQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            image
+            techStack
+            description
+            link
+          }
+        }
+      }
+    }
+  }
+`
