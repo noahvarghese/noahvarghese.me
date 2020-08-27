@@ -15,28 +15,25 @@ const useStyles = makeStyles(({transitions}) => ({
     nav: {
         marginTop: "1.25em",
         zIndex: 5,
+        width: "100vw",
     },    
     navMobile: {
-        position: "relative",
-        width: "100%",
+        width: "100vw",
         zIndex: 10,
     },
     ul: {
         listStyleType: "none",
         display: "inline-block",
-        position: "absolute",
-        right: 0, 
-        width: "100%"
+        float: "right",
     },
     li: {
         display: "inline-block",
         marginRight: "2em",
     },
     backgroundMobile: {
-        backgroundColor: "black",
+        backgroundColor: "rgba(0,0,0,0.7)",
     },
     liMobile: {
-        backgroundColor: "black",
         width: "100%",
         textAlign: "center",
         zIndex: 10,
@@ -60,14 +57,12 @@ const useStyles = makeStyles(({transitions}) => ({
     menu: {
         color: "white",
         fontSize: "2em",
-        float: "right"
     },
     expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: transitions.create('transform', {
-        duration: transitions.duration.shortest,
-      }),
+        transform: 'rotate(0deg)',
+        transition: transitions.create('transform', {
+            duration: transitions.duration.shortest,
+        }),
     },
     expandOpen: {
       transform: 'rotate(180deg)',
@@ -117,7 +112,7 @@ export default function Header() {
                                     <MenuIcon className={classes.menu}/>
                                 </IconButton>
                                 <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                    <ul className={classes.ul}>
+                                    <ul className={classes.ulMobile}>
                                         {data.site.siteMetadata.menuLinks.map((item) => {
                                             return <li className={classes.liMobile} key={item.name}><a href={item.link} className={classes.aMobile}>{item.name.toUpperCase()}</a></li>
                                         })}

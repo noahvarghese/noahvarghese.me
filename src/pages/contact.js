@@ -10,16 +10,17 @@ import { useMediaQuery } from '@material-ui/core';
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     root: {
       width: "100%",
-      top: "30%",
+      position: "absolute",
+      top: "50%",
       bottom: 0,
       left: 0, 
       right: 0,
+      transform: "translateY(-50%)",
       margin: "auto",
     },
     rootMobile: {
-        position: "absolute",
-        height: "70%",
         overflowX: "hidden",
+        position: "relative",
     }
 }));
 

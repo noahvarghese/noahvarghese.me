@@ -32,8 +32,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     rootMobile: {
         margin: 'auto',
         paddingTop: "1em",
-        position: "relative",
-        top: "15vh",
         marginLeft: "1%",
         marginRight: "1%",
         marginBottom: "1%",
@@ -110,7 +108,7 @@ export default function ContactForm() {
 
         <>
             { isActive && 
-                <Card className={clsx(classes.rootMobile, shadowStyles.root)}>
+                <Card className={classes.rootMobile}>
                     <Typography variant="h5" component="h2" className={classes.portraitMobileTitle}>Contact</Typography>
                     <form method="POST" action="" className={classes.formMobile}>
                         <TextField required id="fname" label="First Name" variant="outlined" fullWidth/>
