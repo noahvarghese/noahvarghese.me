@@ -130,9 +130,18 @@ export default function Header() {
                             <nav className={classes.nav}>
                                 <ul className={classes.ul}>
                                     {data.site.siteMetadata.menuLinks.map((item) => {
-                                        if ( item.link == window.location.pathname )
+                                        const isClient = typeof window !== 'undefined';
+
+                                        if ( isClient )
                                         {
-                                            return <li className={classes.li} key={item.name}><a href={item.link} className={classes.selected}>{item.name.toUpperCase()}</a></li>
+                                            if ( item.link == window.location.pathname )
+                                            {
+                                                return <li className={classes.li} key={item.name}><a href={item.link} className={classes.selected}>{item.name.toUpperCase()}</a></li>
+                                            }
+                                            else
+                                            {
+                                                return <li className={classes.li} key={item.name}><a href={item.link} className={classes.a}>{item.name.toUpperCase()}</a></li>
+                                            }
                                         }
                                         else
                                         {
