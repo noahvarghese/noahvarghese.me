@@ -12,5 +12,6 @@ deploy:
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
   bucket: 'noahvarghese.me'
+  endpoint: http://noahvarghese.me.s3-website.ca-central-1.amazonaws.com/
   acl: public_read
   
