@@ -62,6 +62,7 @@ export default function Home() {
       <Header />
       <Wave />
       <div className={classes.root}>
+        <h1>TEST</h1>
         <div className={classes.me}>
           <AboutCard/>
         </div>
