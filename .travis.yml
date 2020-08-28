@@ -34,5 +34,10 @@ deploy:
   on:
     branch: test
 
-after_deploy: ./cleanup.sh
+after_deploy: 
+  - if [ $TRAVIS_BRANCH == "master" ]; then
+      sudo aws s3 rm s3://noahvarghese.me/src;
+    elif [ $TRAVIS_BRANCH == "test" ]; then
+      sudo aws s3 rm s3://test.noahvarghese.me/src;
+    fi
   
