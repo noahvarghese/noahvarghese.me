@@ -3,6 +3,9 @@ node_js:
   - 14.8.0
 install: npm install && npm audit fix
 
+env:
+
+
 #before_script:
 #  - if [ $TRAVIS_BRANCH == "master" ]; then
 #      sudo aws s3 rm s3://noahvarghese.me/ --recursive;
@@ -22,28 +25,19 @@ branches:
   - master
   - test
 deploy:
-  - provider: s3
-    access_key_id: $AWS_KEY
-    secret_access_key: $AWS_SECRET
-    bucket: noahvarghese.me
-    acl: public_read
-    region: ca-central-1
-    cleanup: true
-    local_dir: ./public
-    on: 
-      branch: master
-      condition: $TRAVIS_BRANCH = ^(master)$
-  - provider: s3 
-    access_key_id: $AWS_KEY
-    secret_access_key: $AWS_SECRET
-    bucket: test.noahvarghese.me
-    acl: public_read
-    region: ca-central-1
-    cleanup: true
-    local_dir: ./public
-    on:
-      branch: test
-      condition: $TRAVIS_BRANCH = ^(test)$
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: 
+    - if [ $TRAVIS_BRANCH = "master ]; then
+        noahvarghese.me
+      elif
+        test.noahvarghese.me
+      fi
+  acl: public_read
+  region: ca-central-1
+  cleanup: false
+  local_dir: ./public
 
 
 #after_deploy: 
