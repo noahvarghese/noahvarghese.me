@@ -3,15 +3,16 @@ node_js:
   - 14.8.0
 install: yarn
 script: gatsby build
-cache:
-  directories:
-    - node_modules
+# safelist
+branches:
+  only:
+  - master
 deploy:
   provider: s3
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
   bucket: noah-portfolio
-  endpoint: http://noah-portfolio.s3-website.ca-central-1.amazonaws.com
+  endpoint: s3://noah-portfolio
   acl: public_read
   region: ca-central-1
   
