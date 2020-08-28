@@ -4,10 +4,10 @@ node_js:
 install: npm install && npm audit fix
 
 before_script:
-  - if [ $TRAVIS_BRANCH == "master" ];then
-      echo $TRAVIS_BRANCH;
+  - if [ $TRAVIS_BRANCH == "master" ]; then
+      aws s3 rm s3://noahvarghese.me/*;
     elif [ $TRAVIS_BRANCH == "test" ]; then
-      echo $TRAVIS_BRANCH;
+      aws s3 rm s3://test.noahvarghese.me/*;
     fi
 
 script: gatsby build
