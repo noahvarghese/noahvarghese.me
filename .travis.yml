@@ -25,6 +25,7 @@ deploy:
   region: ca-central-1
   on: 
     branch: master
+  local_dir: public
   provider: s3 
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
@@ -33,6 +34,7 @@ deploy:
   region: ca-central-1
   on:
     branch: test
+  local_dir: public
 
 after_deploy: 
   - if [ $TRAVIS_BRANCH == "master" ]; then
