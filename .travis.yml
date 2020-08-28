@@ -3,18 +3,18 @@ node_js:
   - 14.8.0
 install: ./install.sh
 
-before_script:
-  - if [ $TRAVIS_BRANCH == "master" ]; then
-      sudo aws s3 rm s3://noahvarghese.me/ --recursive;
-    elif [ $TRAVIS_BRANCH == "test" ]; then
-      sudo aws s3 rm s3://test.noahvarghese.me/ --recursive;
-    fi
+#before_script:
+#  - if [ $TRAVIS_BRANCH == "master" ]; then
+#      sudo aws s3 rm s3://noahvarghese.me/ --recursive;
+#    elif [ $TRAVIS_BRANCH == "test" ]; then
+#      sudo aws s3 rm s3://test.noahvarghese.me/ --recursive;
+#    fi
 
 script: gatsby clean && gatsby build
 
-after_script: pwd && ls -la;
+#after_script: pwd && ls -la;
 
-before_deploy: pwd && ls -la
+#before_deploy: pwd && ls -la
 
 # safelist
 branches:
@@ -43,10 +43,11 @@ deploy:
   on:
     branch: test
 
-after_deploy: 
-  - if [ $TRAVIS_BRANCH == "master" ]; then
-      sudo aws s3 rm s3://noahvarghese.me/src --recursive;
-    elif [ $TRAVIS_BRANCH == "test" ]; then
-      sudo aws s3 rm s3://test.noahvarghese.me/src --recursive;
-    fi
+
+#after_deploy: 
+#  - if [ $TRAVIS_BRANCH == "master" ]; then
+#      sudo aws s3 rm s3://noahvarghese.me/src --recursive;
+#    elif [ $TRAVIS_BRANCH == "test" ]; then
+#      sudo aws s3 rm s3://test.noahvarghese.me/src --recursive;
+#    fi
   
