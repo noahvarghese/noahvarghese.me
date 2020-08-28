@@ -6,9 +6,8 @@ import {
 import Header from "../components/Header";
 import Card from '@material-ui/core/Card';
 import {Link} from "gatsby";
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 
 const useStyles = makeStyles({
     root: {
@@ -51,12 +50,13 @@ const useStyles = makeStyles({
 export default function NotFound(props) {
 
     const classes = useStyles();
+    const shadowStyles = useOverShadowStyles();
 
     return (
         <>
             <Wave/>
             <Header />
-            <Card className={classes.root}>
+            <Card className={clsx(classes.root, shadowStyles.root)}>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>404 Page Not Found</Typography>
                 <Typography variant="h5" component="h2" className={classes.margin}>What Do You Think You're Doing?</Typography>
                 <Typography variant="body2" component="p" className={classes.pos}>
