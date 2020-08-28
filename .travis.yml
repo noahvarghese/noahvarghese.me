@@ -13,6 +13,9 @@ before_script:
 script: gatsby clean && gatsby build
 
 after_script: pwd && ls -la;
+
+before_deploy: pwd && ls -la
+
 # safelist
 branches:
   only:
