@@ -9,8 +9,6 @@ import Card from '@material-ui/core/Card';
 import Button from "@material-ui/core/Button";
 import Typography from '@material-ui/core/Typography';
 import { TextField } from '@material-ui/core';
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Link} from "gatsby";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -56,20 +54,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
         flexWrap: "wrap",
         justifyContent: "space-between"
     },
-    imageContainer: {
-        position: "relative",
-        margin: "auto"
-    },
-    image: {
-        fontSize: "2em",
-        marginTop: "0.5em",
-        marginRight: "0.5em",
-        marginLeft: "0.5em",
-        color: "#888888",
-        '&:hover': {
-            color: "black"
-        }
-    },
     formMobile: {
         backgroundColor: "rgba(255,255,255, 0.7)",
         padding: "1em",
@@ -85,12 +69,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "space-between"
-    },
-    imageContainerMobile: {
-        position: "relative",
-        left: "50%",
-        margin: "auto",
-        transform: "translateX(-20%)",
     },
     portraitMobileTitle: {
         marginLeft: "1em"
@@ -120,10 +98,6 @@ export default function ContactForm() {
                             <Button type="submit" color="primary" size="large">Submit</Button>
                         </div>
                     </form>
-                    <div className={classes.imageContainerMobile}>
-                        <Link to="https://github.com/noahvarghese" target="_blank"><GitHubIcon className={classes.image}/></Link>
-                        <Link to="https://linkedin.com/in/varghese-noah/" target="_blank"><LinkedInIcon className={classes.image}/></Link>            
-                    </div>
                 </Card>
             }
 
@@ -140,10 +114,6 @@ export default function ContactForm() {
                             <Button type="submit" color="primary" size="large">Submit</Button>
                         </div>
                     </form>
-                    <div className={classes.imageContainer}>
-                        <Link to="https://github.com/noahvarghese" target="_blank"><GitHubIcon className={classes.image}/></Link>
-                        <Link to="https://linkedin.com/in/varghese-noah/" target="_blank"><LinkedInIcon className={classes.image}/></Link>            
-                    </div>
                 </Card> 
             }
         </>

@@ -17,6 +17,8 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { useMediaQuery } from '@material-ui/core';
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
     root: {
@@ -108,7 +110,27 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
             marginTop: "1em",
             marginRight: "1em"
         }
-    }
+    },
+    imageContainer: {
+        position: "relative",
+        margin: "auto"
+    },
+    imageContainerMobile: {
+        position: "relative",
+        left: "50%",
+        margin: "auto",
+        transform: "translateX(-20%)",
+    },
+    image: {
+        fontSize: "2em",
+        marginTop: "0.5em",
+        marginRight: "0.5em",
+        marginLeft: "0.5em",
+        color: "#888888",
+        '&:hover': {
+            color: "black"
+        }
+    },
 }));
 
 export default function AboutCard() {
@@ -139,6 +161,16 @@ export default function AboutCard() {
                     <Typography variant="body2" component="p" className={classes.pos}>
                         Hi! I'm Noah, I'm a software developer based out of Ontario. 
                     </Typography>
+                    { isMobile && 
+                    <div className={classes.imageContainerMobile}>
+                        <Link to="https://github.com/noahvarghese" target="_blank"><GitHubIcon className={classes.image}/></Link>
+                        <Link to="https://linkedin.com/in/varghese-noah/" target="_blank"><LinkedInIcon className={classes.image}/></Link>            
+                    </div>}
+                    { isDesktop && 
+                    <div className={classes.imageContainer}>
+                        <Link to="https://github.com/noahvarghese" target="_blank"><GitHubIcon className={classes.image}/></Link>
+                        <Link to="https://linkedin.com/in/varghese-noah/" target="_blank"><LinkedInIcon className={classes.image}/></Link>            
+                    </div>}
             </CardContent>
             <CardActions className={classes.icons}>
                 <IconButton
