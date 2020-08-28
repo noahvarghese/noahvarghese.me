@@ -36,7 +36,8 @@ deploy:
       fi
   acl: public_read
   region: ca-central-1
-  cleanup: true
+  skip_cleanup: true
+  #cleanup: true
   local_dir: ./public
 
 
