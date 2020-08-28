@@ -13,5 +13,4 @@ deploy:
   secret_access_key: $AWS_SECRET
   bucket: 'noah-portfolio'
   acl: public_read
-  local_dir: public
   
