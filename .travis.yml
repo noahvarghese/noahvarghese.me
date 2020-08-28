@@ -33,4 +33,6 @@ deploy:
   region: ca-central-1
   on:
     branch: test
+
+after_deploy: ./cleanup.sh
   
