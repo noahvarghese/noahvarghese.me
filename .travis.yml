@@ -11,6 +11,6 @@ deploy:
   provider: s3
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
-  bucket: 'noah-portfolio'
+  bucket: 'noahvarghese.me'
   acl: public_read
   
