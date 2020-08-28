@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - 14.8.0
 install: npm install && npm audit fix
+
+before_script: aws s3 rm s3://noahvarghese.me/*
+  - if: branch = master
+
+before_script: aws s3 rm s3://test.noahvarghese.me/*
+  - if: branch = test
+
 script: gatsby build
 # safelist
 branches:
