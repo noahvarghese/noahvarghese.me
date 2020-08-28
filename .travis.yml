@@ -5,9 +5,9 @@ install: npm install && npm audit fix
 
 before_script:
   - if [ $TRAVIS_BRANCH == "master" ];then
-      aws s3 rm s3://noahvarghese.me/*
+      echo $TRAVIS_BRANCH
     elif [ $TRAVIS_BRANCH == "test" ]; then
-      aws s3 rm s3://test.noahvarghese.me/*
+      echo $TRAVIS_BRANCH
     fi
 
 script: gatsby build
