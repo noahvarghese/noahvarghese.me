@@ -1,15 +1,15 @@
 language: node_js
 node_js:
   - 14.8.0
-install: npm i
+install: yarn
 script: gatsby build
 branches:
   only:
     - master
 deploy:
   provider: s3
-  access_key_id: $AWS_ID
-  secret_access_key: $AWS_KEY
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
   bucket: noah-portfolio
   endpoint: http://noah-portfolio.s3-website.ca-central-1.amazonaws.com
   acl: public_read

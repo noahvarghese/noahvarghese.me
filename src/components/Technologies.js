@@ -6,23 +6,23 @@ import {
 const useStyles = makeStyles({
   img: {
       display: "block",
-      maxWidth: "12em",
-      maxHeight: "5em",
+      maxWidth: "12rem",
+      maxHeight: "5rem",
       width: "auto",
       height: "auto",
-      marginTop: "1em",
-      marginRight: "1em",
-      marginBottom: "1em",
+      marginTop: "1rem",
+      marginRight: "1rem",
+      marginBottom: "1rem",
   }, 
   imgSmall: {
       display: "block",
-      maxWidth: "12em",
-      maxHeight: "7em",
+      maxWidth: "12rem",
+      maxHeight: "7rem",
       width: "auto",
       height: "auto",
-      marginTop: "1em",
-      marginRight: "2em",
-      marginBottom: "1em",
+      marginTop: "1rem",
+      marginRight: "2rem",
+      marginBottom: "1rem",
   }
 });
 
