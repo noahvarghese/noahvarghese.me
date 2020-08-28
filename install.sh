@@ -5,6 +5,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 mkdir ~/.aws
 touch ~/.aws/{credentials,config}
+sudo echo "[default]" > ~/.aws/credentials
 sudo echo "aws_access_key_id = $AWS_KEY" > ~/.aws/credentials
 sudo echo "aws_secret_access_key = $AWS_SECRET" >> ~/.aws/credentials
 sudo echo "[default]" > ~/.aws/config
