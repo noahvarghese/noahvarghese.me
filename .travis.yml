@@ -32,7 +32,6 @@ deploy:
   local_dir: ./public
   on: 
     branch: master
-  local_dir: public
   provider: s3 
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
@@ -40,7 +39,7 @@ deploy:
   acl: public_read
   region: ca-central-1
   skip_cleanup: true
-  local_dir: .
+  local_dir: ./public
   on:
     branch: test
 
