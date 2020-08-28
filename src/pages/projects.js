@@ -19,7 +19,7 @@ const useStyles = makeStyles({
         flexWrap: "wrap",
         justifyContent: "space-between",
         alignItems: "center",
-        alignContent: "space-between",
+        alignContent: "space-around",
         margin: "auto",
         position: "relative"
     },

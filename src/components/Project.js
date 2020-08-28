@@ -30,8 +30,9 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
         transition: '0.3s',
         boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
         position: 'relative',
-        maxWidth: 600,
-        marginLeft: 'auto',
+        maxWidth: 700,
+        flex: "0 1 35%",
+        alignSelf: "stretch",
         overflow: 'initial',
         background: '#ffffff',
         display: 'flex',
@@ -102,7 +103,7 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
       transform: 'rotate(180deg)',
     },
     header: {
-        width: 450,
+        width: 500,
         fontSize: "3rem",
     },
     headerMobile: {
