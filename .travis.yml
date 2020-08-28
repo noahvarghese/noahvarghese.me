@@ -14,4 +14,5 @@ deploy:
   bucket: noah-portfolio
   acl: public_read
   region: ca-central-1
+  local_dir: public
   

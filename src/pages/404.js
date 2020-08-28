@@ -10,18 +10,36 @@ import Typography from '@material-ui/core/Typography';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 import clsx from 'clsx';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ breakpoints, spacing }) => ({
+    container: {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        right: 0,
+        bottom: 0,
+        transform: "translate(-50%, -50%)"
+    },
     root: {
+        marginTop: "2rem",
+        marginBottom: "2rem",
+        margin: 'auto',
+        borderRadius: spacing(2), // 16px
+        transition: '0.3s',
+        boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
+        maxWidth: 600,
+        marginLeft: 'auto',
+        overflow: 'initial',
+        background: '#ffffff',
+        alignItems: 'center',
+        position: "relative",
+        paddingBottom: spacing(2),
+        [breakpoints.up('md')]: {
+            paddingTop: spacing(2),
+        },
         minWidth: 275,
         width: "40em",
         height: "12em",
-        margin: "auto",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0, 
-        right: 0,
-        padding: "2em"
+        padding: "2em",
     },
     bullet: {
         display: 'inline-block',
@@ -46,7 +64,7 @@ const useStyles = makeStyles({
             color: "black"
         }
     }
-});
+}));
 
 export default function NotFound(props) {
 
@@ -57,13 +75,15 @@ export default function NotFound(props) {
         <>
             <Wave/>
             <Header />
-            <Card className={clsx(classes.root, shadowStyles.root)}>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>404 Page Not Found</Typography>
-                <Typography variant="h5" component="h2" className={classes.margin}>What Do You Think You're Doing?</Typography>
-                <Typography variant="body2" component="p" className={classes.pos}>
-                    If you think you have found a bug, please <Link to="/contact/" className={classes.link}>send me the details.</Link>
-                </Typography>
-            </Card>
+            <div className={classes.container}>
+                <Card className={clsx(classes.root, shadowStyles.root)}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>404 Page Not Found</Typography>
+                    <Typography variant="h5" component="h2" className={classes.margin}>What Do You Think You're Doing?</Typography>
+                    <Typography variant="body2" component="p" className={classes.pos}>
+                        If you think you have found a bug, please <Link to="/contact/" className={classes.link}>send me the details.</Link>
+                    </Typography>
+                </Card>
+            </div>
         </>
     )
 }
