@@ -77,7 +77,8 @@ const useStyles = makeStyles(({transitions}) => ({
 export default function Header() {
 
     const classes = useStyles();
-    const isActive = useMediaQuery('(max-width: 600px)');
+    const isMobile = useMediaQuery('(max-width: 600px)');
+    const isDesktop = useMediaQuery('(min-width: 601px');
 
     const [expanded, setExpanded] = React.useState(false);
 
@@ -102,7 +103,7 @@ export default function Header() {
             render = { data => (
                 <>
                         { 
-                            isActive && 
+                            isMobile && 
                             <nav className={clsx(classes.navMobile, {
                                 [classes.backgroundMobile]: expanded
                             })}>
@@ -126,7 +127,7 @@ export default function Header() {
                             </nav>
                         }
                         { 
-                            ! isActive &&
+                            isDesktop &&
                             <nav className={classes.nav}>
                                 <ul className={classes.ul}>
                                     {data.site.siteMetadata.menuLinks.map((item) => {

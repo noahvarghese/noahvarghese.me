@@ -120,7 +120,8 @@ export default function Project({ project }) {
     const [expanded, setExpanded] = React.useState(false);
     const classes = useStyles();
     const shadowStyles = useOverShadowStyles();
-    const isActive = useMediaQuery('(max-width: 960px)');
+    const isMobile = useMediaQuery('(max-width: 960px)');
+    const isDesktop = useMediaQuery('(min-width: 961px');
 
     const {
         button: buttonStyles,
@@ -135,7 +136,7 @@ export default function Project({ project }) {
   
     return (
         <>
-            { isActive && 
+            { isMobile && 
             <Card className={clsx(classes.rootMobile, shadowStyles.root)}>
                 <CardMedia
                     className={classes.media}
@@ -164,8 +165,7 @@ export default function Project({ project }) {
                         onClick={handleExpandClick}
                         aria-expanded={expanded}
                         aria-label="show more">
-                        { isActive && <ExpandMoreIcon /> }
-                        { ! isActive && <ChevronRightIcon />}
+                        <ExpandMoreIcon />
                     </IconButton>
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -174,18 +174,13 @@ export default function Project({ project }) {
                             { data.description }
                         </Typography>
                         <br />
-                        { 
-                            ( typeof data.link !== 'undefined') ?
-                                <Button className={buttonStyles}><Link href={ data.link } target="_blank" rel="noopener noreferrer">Learn More</Link></Button>
-                                : ""
-                        }
-                        
+                        <Button className={buttonStyles}><Link href={ data.link } target="_blank" rel="noopener noreferrer">Learn More</Link></Button>
                     </CardContent>
                 </Collapse>
             </Card>
             }
 
-            { ! isActive && 
+            { isDesktop && 
             <Card className={clsx(classes.root, shadowStyles.root)}>
                 <CardMedia
                     className={classes.media}
@@ -214,8 +209,7 @@ export default function Project({ project }) {
                         onClick={handleExpandClick}
                         aria-expanded={expanded}
                         aria-label="show more">
-                        { isActive && <ExpandMoreIcon /> }
-                        { ! isActive && <ChevronRightIcon />}
+                        <ChevronRightIcon />
                     </IconButton>
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -224,12 +218,7 @@ export default function Project({ project }) {
                             { data.description }
                         </Typography>
                         <br />
-                        { 
-                            ( typeof data.link !== 'undefined') ?
-                                <Button className={buttonStyles}><Link href={ data.link } target="_blank" rel="noopener noreferrer">Learn More</Link></Button>
-                                : ""
-                        }
-                        
+                        <Button className={buttonStyles}><Link href={ data.link } target="_blank" rel="noopener noreferrer">Learn More</Link></Button>
                     </CardContent>
                 </Collapse>
             </Card>

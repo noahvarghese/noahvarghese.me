@@ -54,7 +54,8 @@ const useStyles = makeStyles({
 export default function Home() {
   
   const classes = useStyles();
-  const isActive = useMediaQuery('(max-width: 600px)');
+  const isMobile = useMediaQuery('(max-width: 600px)');
+  const isDesktop = useMediaQuery('(min-width: 601px');
 
   return (
     <>
@@ -64,7 +65,7 @@ export default function Home() {
         <div className={classes.me}>
           <AboutCard/>
         </div>
-        { ! isActive && 
+        { isDesktop && 
           <div className={classes.container}>
             <Typography className = {classes.title} color = "textSecondary"gutterBottom> Tools and Technology I Have Used </Typography> 
               <div className={classes.imgContainer}>
@@ -72,7 +73,7 @@ export default function Home() {
               </div>
           </div>
         }
-        { isActive && 
+        { isMobile && 
           <div className={classes.containerMobile}>
             <Typography className = {classes.title} color = "textSecondary"gutterBottom> Tools and Technology I Have Used </Typography> 
               <div className={classes.imgContainer}>

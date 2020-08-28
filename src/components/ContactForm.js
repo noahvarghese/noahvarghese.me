@@ -101,13 +101,13 @@ export default function ContactForm() {
 
     const classes = useStyles();
     const shadowStyles = useOverShadowStyles();
-    const isActive = useMediaQuery('(max-width: 812px)');
-    const isLandscape = useMediaQuery('(orientation: landscape');
+    const isMobile = useMediaQuery('(max-width: 812px)');
+    const isDesktop = useMediaQuery('(min-width: 813px');
 
     return (
 
         <>
-            { isActive && 
+            { isMobile && 
                 <Card className={classes.rootMobile}>
                     <Typography variant="h5" component="h2" className={classes.portraitMobileTitle}>Contact</Typography>
                     <form method="POST" action="" className={classes.formMobile}>
@@ -127,7 +127,7 @@ export default function ContactForm() {
                 </Card>
             }
 
-            { ! isActive &&
+            { isDesktop &&
                 <Card className={clsx(classes.root, shadowStyles.root)}>
                     <Typography variant="h5" component="h2">Contact</Typography>
                     <form method="POST" action="" className={classes.form}>

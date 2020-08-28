@@ -116,7 +116,8 @@ export default function AboutCard() {
     const classes = useStyles();
     const shadowStyles = useOverShadowStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const isActive = useMediaQuery('(max-width: 960px)');
+    const isMobile = useMediaQuery('(max-width: 960px)');
+    const isDesktop = useMediaQuery('(min-width: 961px');
   
     const handleExpandClick = () => {
       setExpanded(!expanded);
@@ -147,8 +148,8 @@ export default function AboutCard() {
                     onClick={handleExpandClick}
                     aria-expanded={expanded}
                     aria-label="show more">
-                    { isActive && <ExpandMoreIcon /> }
-                    { ! isActive && <ChevronRightIcon />}
+                    { isMobile && <ExpandMoreIcon /> }
+                    { isDesktop && <ChevronRightIcon />}
                 </IconButton>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>

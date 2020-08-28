@@ -27,20 +27,21 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
 export default function Contact() {
 
     const classes = useStyles();
-    const isActive = useMediaQuery('(max-width: 600px)');
+    const isMobile = useMediaQuery('(max-width: 600px)');
+    const isDesktop = useMediaQuery('(min-width: 601px');
 
     return (
         <>
             <Wave/>
             <Header/>
 
-            { isActive && 
+            { isMobile && 
                 <div className={classes.rootMobile}>
                     <ContactForm/>
                 </div>
             }
 
-            { ! isActive && 
+            { isDesktop && 
                 <>
                     <div className={classes.root}>
                         <ContactForm/>
