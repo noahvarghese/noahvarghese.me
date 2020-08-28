@@ -5,9 +5,9 @@ install: ./install.sh
 
 before_script:
   - if [ $TRAVIS_BRANCH == "master" ]; then
-      sudo aws s3 rm s3://noahvarghese.me/*;
+      sudo aws s3 rm s3://noahvarghese.me/* --recursive;
     elif [ $TRAVIS_BRANCH == "test" ]; then
-      sudo aws s3 rm s3://test.noahvarghese.me/*;
+      sudo aws s3 rm s3://test.noahvarghese.me/* --recursive;
     fi
 
 script: gatsby clean && gatsby build
@@ -36,8 +36,8 @@ deploy:
 
 after_deploy: 
   - if [ $TRAVIS_BRANCH == "master" ]; then
-      sudo aws s3 rm s3://noahvarghese.me/src;
+      sudo aws s3 rm s3://noahvarghese.me/src --recursive;
     elif [ $TRAVIS_BRANCH == "test" ]; then
-      sudo aws s3 rm s3://test.noahvarghese.me/src;
+      sudo aws s3 rm s3://test.noahvarghese.me/src --recursive;
     fi
   
