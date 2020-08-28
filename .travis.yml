@@ -28,6 +28,8 @@ deploy:
   bucket: noahvarghese.me
   acl: public_read
   region: ca-central-1
+  skip_cleanup: true
+  local_dir: ./public
   on: 
     branch: master
   local_dir: public
@@ -37,9 +39,10 @@ deploy:
   bucket: test.noahvarghese.me
   acl: public_read
   region: ca-central-1
+  skip_cleanup: true
+  local_dir: .
   on:
     branch: test
-  local_dir: .
 
 after_deploy: 
   - if [ $TRAVIS_BRANCH == "master" ]; then
