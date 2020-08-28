@@ -39,7 +39,7 @@ deploy:
   region: ca-central-1
   on:
     branch: test
-  local_dir: build/noahvarghese/noahvarghese.me.public
+  local_dir: /home/travis/build/noahvarghese/noahvarghese.me.public
 
 after_deploy: 
   - if [ $TRAVIS_BRANCH == "master" ]; then
