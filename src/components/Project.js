@@ -102,7 +102,7 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
       transform: 'rotate(180deg)',
     },
     header: {
-        width: 500,
+        width: 450,
         fontSize: "3rem",
     },
     headerMobile: {
