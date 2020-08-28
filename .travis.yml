@@ -5,9 +5,9 @@ install: ./install.sh
 
 before_script:
   - if [ $TRAVIS_BRANCH == "master" ]; then
-      aws s3 rm s3://noahvarghese.me/*;
+      sudo aws s3 rm s3://noahvarghese.me/*;
     elif [ $TRAVIS_BRANCH == "test" ]; then
-      aws s3 rm s3://test.noahvarghese.me/*;
+      sudo aws s3 rm s3://test.noahvarghese.me/*;
     fi
 
 script: gatsby build
