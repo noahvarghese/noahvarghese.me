@@ -6,13 +6,13 @@ install: ./install.sh
 before_script:
   - if [ $TRAVIS_BRANCH == "master" ]; then
       sudo aws s3 rm s3://noahvarghese.me/ --recursive;
-      ls -la;
     elif [ $TRAVIS_BRANCH == "test" ]; then
       sudo aws s3 rm s3://test.noahvarghese.me/ --recursive;
-      ls -la;
     fi
 
 script: gatsby clean && gatsby build
+
+after_script: pwd && ls -la;
 # safelist
 branches:
   only:
