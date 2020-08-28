@@ -8,6 +8,7 @@ import Card from '@material-ui/core/Card';
 import {Link} from "gatsby";
 import Typography from '@material-ui/core/Typography';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
+import clsx from 'clsx';
 
 const useStyles = makeStyles({
     root: {
