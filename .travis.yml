@@ -28,7 +28,7 @@ deploy:
     bucket: noahvarghese.me
     acl: public_read
     region: ca-central-1
-    cleanup: false
+    cleanup: true
     local_dir: ./public
     on: 
       branch: master
@@ -39,7 +39,7 @@ deploy:
     bucket: test.noahvarghese.me
     acl: public_read
     region: ca-central-1
-    cleanup: false
+    cleanup: true
     local_dir: ./public
     on:
       branch: test
