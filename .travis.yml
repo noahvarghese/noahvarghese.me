@@ -25,21 +25,30 @@ branches:
   - master
   - test
 deploy:
-  provider: s3
-  access_key_id: $AWS_KEY
-  secret_access_key: $AWS_SECRET
-  bucket: 
-    - if [ $TRAVIS_BRANCH = "master ]; then
-        noahvarghese.me
-      elif
-        test.noahvarghese.me
-      fi
-  acl: public_read
-  region: ca-central-1
-  skip_cleanup: true
-  #cleanup: true
-  local_dir: ./public
-
+  - provider: s3
+    access_key_id: $AWS_KEY
+    secret_access_key: $AWS_SECRET
+    bucket: noahvarghese.me
+    acl: public_read
+    region: ca-central-1
+    skip_cleanup: true
+    #cleanup: true
+    local_dir: ./public
+    on:
+      branch: master
+      condition: $TRAVIS_BRANCH = master
+  - provider: s3
+    access_key_id: $AWS_KEY
+    secret_access_key: $AWS_SECRET
+    bucket: test.noahvarghese.me
+    acl: public_read
+    region: ca-central-1
+    skip_cleanup: true
+    #cleanup: true
+    local_dir: ./public
+    on:
+      branch: test
+      condition: $TRAVIS_BRANCH = test
 
 #after_deploy: 
 #  - if [ $TRAVIS_BRANCH == "master" ]; then
