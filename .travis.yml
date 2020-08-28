@@ -7,6 +7,7 @@ script: gatsby build
 branches:
   only:
   - master
+  - test
 deploy:
   provider: s3
   access_key_id: $AWS_KEY
@@ -14,4 +15,14 @@ deploy:
   bucket: noahvarghese.me
   acl: public_read
   region: ca-central-1
+  on: 
+    branch: master
+  provider: s3 
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: test.noahvarghese.me
+  acl: public_read
+  region: ca-central-1
+  on:
+    branch: test
   
