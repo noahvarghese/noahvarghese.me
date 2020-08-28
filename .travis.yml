@@ -5,9 +5,9 @@ install: npm install && npm audit fix
 
 before_script:
   - if [ $TRAVIS_BRANCH == "master" ];then
-      echo $TRAVIS_BRANCH
+      echo $TRAVIS_BRANCH;
     elif [ $TRAVIS_BRANCH == "test" ]; then
-      echo $TRAVIS_BRANCH
+      echo $TRAVIS_BRANCH;
     fi
 
 script: gatsby build
