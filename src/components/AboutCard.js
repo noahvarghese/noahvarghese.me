@@ -168,8 +168,8 @@ export default function AboutCard() {
                     </div>}
                     { isDesktop && 
                     <div className={classes.imageContainer}>
-                        <Link to="https://github.com/noahvarghese" target="_blank"><GitHubIcon className={classes.image}/></Link>
-                        <Link to="https://linkedin.com/in/varghese-noah/" target="_blank"><LinkedInIcon className={classes.image}/></Link>            
+                        <Link href="https://github.com/noahvarghese" target="_blank" rel="noopener noreferrer"><GitHubIcon className={classes.image}/></Link>
+                        <Link href="https://linkedin.com/in/varghese-noah/" target="_blank" rel="noopener noreferrer"><LinkedInIcon className={classes.image}/></Link>            
                     </div>}
             </CardContent>
             <CardActions className={classes.icons}>
