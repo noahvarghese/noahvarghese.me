@@ -123,13 +123,19 @@ export default function ContactForm() {
         
             const body = 'From: ' + fname + " " + lname + '\n\nEmail: ' + email + '\n\nMessage: ' + message;
     
-            const response = await fetch("https://chestnut-shrimp-6053.twil.io/send-email", {
-                method: "post",
-                headers: {
-                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                },
-                body: new URLSearchParams({ email, body }).toString(),
-            });
+            try
+            {
+                const response = await fetch("https://chestnut-shrimp-6053.twil.io/send-email", {
+                    method: "post",
+                    headers: {
+                        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    },
+                    body: new URLSearchParams({ email, body }).toString(),
+                });
+            } catch ( error ) {
+                setSubmitting(false);
+                setErrorOpen(true);
+            }
     
             if (response.status === 200) {
                 setError(null);
