@@ -96,8 +96,6 @@ const Header = ({data}) => {
 
     let navItems = [];
 
-    console.log(data.site.siteMetadata.menuLinks);
-
     data.site.siteMetadata.menuLinks.forEach((item) => {
         
         let isSelected = false;
