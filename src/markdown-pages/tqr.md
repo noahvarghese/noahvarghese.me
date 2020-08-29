@@ -5,5 +5,7 @@ title: "RT60 Quote Calculator"
 image: "/img/tqr.png"
 techStack:
     - "Javascript"
-description: "Calculates reverb existing in a space and based off of customer's required reverb, calculates amount of material and price. Reverse engineered existing spreadsheet to create an internal tool to speed up quote times and produce more accurate quotes. "
+    - "Bootstrap"
+    - "HTML"
+description: "Reverse engineered client's spreadsheet to create an internal tool to speed up quote times and produce more accurate quotes. Calculates reverb existing in a space and based off of customer's required reverb, calculates amount of material and price."
 ---

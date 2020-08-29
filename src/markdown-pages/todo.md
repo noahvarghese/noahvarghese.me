@@ -5,6 +5,6 @@ title: "To Do App"
 image: "/img/todo.png"
 techStack:
     - "React"
-description: "Basic todo app written in React to get a basic understanding of state and props."
+description: "Basic todo app written in React to get an understanding of state and props."
 link: "https://github.com/noahvarghese/todo"
 ---

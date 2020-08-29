@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import {
     makeStyles
 } from '@material-ui/core/styles';
@@ -10,6 +10,8 @@ import {
     Collapse, 
 } from '@material-ui/core';
 import clsx from 'clsx';
+import { Helmet } from 'react-helmet';
+import PropTypes from "prop-types"
 
 const useStyles = makeStyles(({transitions}) => ({
     nav: {
@@ -74,86 +76,137 @@ const useStyles = makeStyles(({transitions}) => ({
     }
 }));
 
-export default function Header() {
+const Header = ({data}) => {
 
     const classes = useStyles();
     const isMobile = useMediaQuery('(max-width: 600px)');
     const isDesktop = useMediaQuery('(min-width: 601px');
+    const isClient = typeof window !== 'undefined';
+    const bull = <span className={classes.bullet}>•</span>;
 
     const [expanded, setExpanded] = React.useState(false);
 
     const expand = () => {
         setExpanded(!expanded);
     };
+    
+    let description = data.site.siteMetadata.description;
+    let title = data.site.siteMetadata.title;
+
+
+    let navItems = [];
+
+    console.log(data.site.siteMetadata.menuLinks);
+
+    data.site.siteMetadata.menuLinks.forEach((item) => {
+        
+        let isSelected = false;
+
+        if ( isClient )
+        {
+            if ( item.link == window.location.pathname )
+            {
+                if ( item.description != "" )
+                {
+                    description = item.description;
+                }
+        
+                if ( item.title != "" && item.title != "Home" )
+                {
+                    title = item.title + " • " + title;
+                }
+
+                isSelected = true;
+            }            
+        }
+        
+        navItems.push(
+            <li className={ isMobile ? classes.liMobile : classes.li } key={item.name}>\
+                <a href={item.link} className={ isSelected ? classes.selected : classes.a}>
+                    {item.name.toUpperCase()}
+                </a>
+            </li>
+        );
+    });
 
     return (
-        <StaticQuery 
-            query = { graphql `
-                query HeadingQuery {
-                    site {
-                        siteMetadata {
-                            menuLinks {
-                                name,
-                                link
-                            }
-                        }
+        <>
+            <Helmet>
+                <title>{ title }</title>
+                <meta name="description" content={description}/>
+            </Helmet>
+            { 
+                isMobile && 
+                <nav className={clsx(classes.navMobile, {
+                        [classes.backgroundMobile]: expanded
+                    })}>
+                    <IconButton
+                        className={clsx(classes.expand, {
+                            [classes.expandOpen]: expanded,
+                        })} 
+                        onClick={expand}
+                        aria-expanded={expanded}
+                        aria-label="open menu">
+                        <MenuIcon className={classes.menu}/>
+                    </IconButton>
+                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+                        <ul className={classes.ulMobile}>
+                            { navItems.map(item => {return item}) }
+                        </ul>
+                    </Collapse>
+                </nav>
+            }
+            { 
+                isDesktop &&
+                <nav className={classes.nav}>
+                    <ul className={classes.ul}>
+                        { navItems.map(item => {return item}) }
+                    </ul>
+                </nav>
+            }
+        </>
+    );
+}
+
+export default function MyHeader(props) {
+    return (
+        <StaticQuery
+        query = { graphql`
+            query HeadingQuery {
+                site {
+                    siteMetadata {
+                        menuLinks {
+                            name,
+                            title,
+                            link,
+                            description
+                        },
+                        title,
+                        description
                     }
                 }
-            `}
-            render = { data => (
-                <>
-                        { 
-                            isMobile && 
-                            <nav className={clsx(classes.navMobile, {
-                                [classes.backgroundMobile]: expanded
-                            })}>
-                                <IconButton
-                                    className={clsx(classes.expand, {
-                                        [classes.expandOpen]: expanded,
-                                    })} 
-                                    onClick={expand}
-                                    aria-expanded={expanded}
-                                    aria-label="open menu"
-                                >
-                                    <MenuIcon className={classes.menu}/>
-                                </IconButton>
-                                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                    <ul className={classes.ulMobile}>
-                                        {data.site.siteMetadata.menuLinks.map((item) => {
-                                            return <li className={classes.liMobile} key={item.name}><a href={item.link} className={classes.aMobile}>{item.name.toUpperCase()}</a></li>
-                                        })}
-                                    </ul>
-                                </Collapse>
-                            </nav>
-                        }
-                        { 
-                            isDesktop &&
-                            <nav className={classes.nav}>
-                                <ul className={classes.ul}>
-                                    {data.site.siteMetadata.menuLinks.map((item) => {
-                                        const isClient = typeof window !== 'undefined';
-
-                                        if ( isClient )
-                                        {
-                                            if ( item.link == window.location.pathname )
-                                            {
-                                                return <li className={classes.li} key={item.name}><a href={item.link} className={classes.selected}>{item.name.toUpperCase()}</a></li>
-                                            }
-                                            else
-                                            {
-                                                return <li className={classes.li} key={item.name}><a href={item.link} className={classes.a}>{item.name.toUpperCase()}</a></li>
-                                            }
-                                        }
-                                        else
-                                        {
-                                            return <li className={classes.li} key={item.name}><a href={item.link} className={classes.a}>{item.name.toUpperCase()}</a></li>
-                                        }
-                                    })}
-                                </ul>
-                            </nav>
-                        }
-                            </>
-            )}
+            }
+        `}
+        render={data => <Header data={data} {...props}/>}
         />
-    );
+    )
+}
+
+Header.propTypes = {
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                menuLinks: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        name: PropTypes.string.isRequired,
+                        title: PropTypes.string.isRequired,
+                        link: PropTypes.string.isRequired,
+                        description: PropTypes.string.isRequired,
+                    }).isRequired
+                ).isRequired,
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired
+            }).isRequired,
+        }).isRequired,
+    }).isRequired,
 }

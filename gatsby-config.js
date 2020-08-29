@@ -39,18 +39,25 @@ module.exports = {
   ],
   siteMetadata: {
     title: 'Noah Varghese',
+    description: 'Portfolio site for Noah Varghese.',
     menuLinks: [
       {
         name: 'home',
-        link: '/'
+        title: 'Home',
+        link: '/',
+        description: "Hi! I'm Noah, I'm a software developer based out of Ontario. My main interests lie in both mobile and web app development, as well as dev ops and automation."
       },
       {
         name: 'projects',
-        link: '/projects/'
+        title: 'Projects',
+        link: '/projects/',
+        description: 'List of my projects, past and present.'
       },
       {
         name: 'contact',
-        link: '/contact/'
+        title: 'Contact',
+        link: '/contact/',
+        description: 'If you would like to collaborate or inquire about my services feel free to contact me.'
       }
     ]
   }
