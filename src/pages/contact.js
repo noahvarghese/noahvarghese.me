@@ -42,11 +42,9 @@ export default function Contact() {
             }
 
             { isDesktop && 
-                <>
-                    <div className={classes.root}>
-                        <ContactForm/>
-                    </div>
-                </>
+                <div className={classes.root}>
+                    <ContactForm/>
+                </div>
             }
         </>
     );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 import {
@@ -9,7 +9,6 @@ import Card from '@material-ui/core/Card';
 import Button from "@material-ui/core/Button";
 import Typography from '@material-ui/core/Typography';
 import { TextField } from '@material-ui/core';
-import {Link} from "gatsby";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     root: {
@@ -77,45 +76,63 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
 
 export default function ContactForm() {
 
+    let [fname, setFname] = useState("");
+    let [lname, setLname] = useState("");
+    let [email, setEmail] = useState("");
+    let [message, setMessage] = useState("");
+    let [error, setError] = useState("");
+    let [submitting, setSubmitting] = useState("");
+
+
+    const sendEmail = async (event) => {
+
+        event.preventDefault();
+        
+        const body = 'From: ' + fname + " " + lname + '\n\nEmail: ' + email + '\n\nMessage: ' + message;
+
+        const response = await fetch("https://chestnut-shrimp-6053.twil.io/send-email", {
+            method: "post",
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+            },
+            body: new URLSearchParams({ email, body }).toString(),
+        });
+
+        console.log(response);
+
+        if (response.status === 200) {
+            setError(null);
+            setSubmitting(false);
+            setFname("");
+            setLname("");
+            setEmail("");
+            setMessage("");
+        } else {
+            const json = await response.json()
+            console.log(json);
+            setError(json.error);
+            setSubmitting(false);
+        }
+
+    }
+
     const classes = useStyles();
     const shadowStyles = useOverShadowStyles();
     const isMobile = useMediaQuery('(max-width: 812px)');
-    const isDesktop = useMediaQuery('(min-width: 813px');
 
     return (
-
-        <>
-            { isMobile && 
-                <Card className={classes.rootMobile}>
-                    <Typography variant="h5" component="h2" className={classes.portraitMobileTitle}>Contact</Typography>
-                    <form method="POST" action="" className={classes.formMobile}>
-                        <TextField required id="fname" label="First Name" variant="outlined" fullWidth/>
-                        <TextField required id="lname" label="Last Name" variant="outlined" fullWidth/>
-                        <TextField required id="email" label="Email" variant="outlined" fullWidth />
-                        <TextField required id="message" label="Message" variant="outlined" multiline rows={5} fullWidth />
-                        <div className={classes.rowMobile}>
-                            <Button type="reset" color="secondary" size="large">Clear</Button>
-                            <Button type="submit" color="primary" size="large">Submit</Button>
-                        </div>
-                    </form>
-                </Card>
-            }
-
-            { isDesktop &&
-                <Card className={clsx(classes.root, shadowStyles.root)}>
-                    <Typography variant="h5" component="h2">Contact</Typography>
-                    <form method="POST" action="" className={classes.form}>
-                        <TextField required id="fname" label="First Name" variant="outlined" fullWidth/>
-                        <TextField required id="lname" label="Last Name" variant="outlined" fullWidth/>
-                        <TextField required id="email" label="Email" variant="outlined" fullWidth />
-                        <TextField required id="message" label="Message" variant="outlined" multiline rows={5} fullWidth />
-                        <div className={classes.row}>
-                            <Button type="reset" color="secondary" size="large">Clear</Button>
-                            <Button type="submit" color="primary" size="large">Submit</Button>
-                        </div>
-                    </form>
-                </Card> 
-            }
-        </>
+        <Card className={ clsx((isMobile ? classes.rootMobile : classes.root), shadowStyles.root) }>
+            <Typography variant="h5" component="h2" className={classes.portraitMobileTitle}>Contact</Typography>
+            <form method="POST" action="https://chestnut-shrimp-6053.twil.io/send-email" className={classes.formMobile}>
+                <TextField required id="fname" label="First Name" variant="outlined" value={fname} onChange={(e) => {setFname(e.target.value)}} fullWidth/>
+                <TextField required id="lname" label="Last Name" variant="outlined" value={lname} onChange={(e) => {setLname(e.target.value)}}  fullWidth/>
+                <TextField required id="email" label="Email" variant="outlined" value={email} onChange={(e) => {setEmail(e.target.value)}}  fullWidth />
+                <TextField required id="message" label="Message" variant="outlined" value={message} onChange={(e) => {setMessage(e.target.value)}}  multiline rows={5} fullWidth />
+                <div className={ isMobile ? classes.rowMobile : classes.row }>
+                    <Button type="reset" color="secondary" size="large">Clear</Button>
+                    <Button type="submit" color="primary" size="large" onClick={sendEmail}>Submit</Button>
+                </div>
+            </form>
+        </Card>
     )
 }
