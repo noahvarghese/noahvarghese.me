@@ -95,6 +95,10 @@ export default function ContactForm() {
     let [submitting, setSubmitting] = useState("");
     let [open, setOpen] = useState(false);
     let [errorOpen, setErrorOpen] = useState(false);
+    let [fnameError, setFnameError] = useState("");
+    let [lnameError, setLnameError] = useState("");
+    let [emailError, setEmailError] = useState("");
+    let [messageError, setMessageError] = useState("");
   
     const handleClose = (event, reason) => {
       if (reason === 'clickaway') {
@@ -112,13 +116,85 @@ export default function ContactForm() {
       setErrorOpen(false);
     };
 
+    const formValidation = () => {
+
+        let hasError = false;
+
+        setFnameError("");
+        setLnameError("");
+        setEmailError("");
+        setMessageError("");
+
+        if ( fname == "" )
+        {
+            setFnameError("This field is required.");
+            hasError = true;
+        } 
+
+        if ( lname == "" )
+        {
+            setLnameError("This field is required.");
+            hasError = true;
+        }
+
+        if ( email == "" )
+        {
+            setEmailError("This field is required.");
+            hasError = true;
+        }
+        else
+        {
+            if ( ValidateEmail(email) == false )
+            {
+                hasError = true;
+            }
+        }
+
+        if ( message == "" )
+        {
+            setMessageError("This field is required.");
+            hasError = true;
+        }
+
+        return hasError;
+
+    }
+
+    function ValidateEmail(mail) 
+    {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+        {
+            setEmailError("");
+            return true;
+        }
+        
+        setEmailError("Please enter a valid email address.");
+        return false
+    }
+
+    const resetErrors = () => {
+        // Reset values
+        setFname("");
+        setLname("");
+        setEmail("");
+        setMessage("");
+
+        // Reset errors
+        setFnameError("");
+        setLnameError("");
+        setEmailError("");
+        setMessageError("");
+    }
 
     const sendEmail = async (event) => {
-
         event.preventDefault();
 
-        if ( submitting == false )
+        const hasError = formValidation();
+
+        console.log("pre check");
+        if ( submitting == false && hasError == false )
         {
+            console.log("should not be in here");
             setSubmitting(true);
         
             const body = 'From: ' + fname + " " + lname + '\n\nEmail: ' + email + '\n\nMessage: ' + message;
@@ -164,12 +240,103 @@ export default function ContactForm() {
         <Card className={ clsx((isMobile ? classes.rootMobile : classes.root), shadowStyles.root) }>
             <Typography variant="h5" component="h2" className={classes.portraitMobileTitle}>Contact</Typography>
             <form method="POST" action="https://chestnut-shrimp-6053.twil.io/send-email" className={classes.formMobile}>
-                <TextField required id="fname" label="First Name" variant="outlined" value={fname} onChange={(e) => {setFname(e.target.value)}} fullWidth/>
-                <TextField required id="lname" label="Last Name" variant="outlined" value={lname} onChange={(e) => {setLname(e.target.value)}}  fullWidth/>
-                <TextField required id="email" label="Email" variant="outlined" value={email} onChange={(e) => {setEmail(e.target.value)}}  fullWidth />
-                <TextField required id="message" label="Message" variant="outlined" value={message} onChange={(e) => {setMessage(e.target.value)}}  multiline rows={5} fullWidth />
+                <TextField 
+                    error={fnameError != "" ? true : false} 
+                    helperText={fnameError} 
+                    required 
+                    id="fname" 
+                    label="First Name" 
+                    variant="outlined" 
+                    value={fname} 
+                    onChange={
+                        (e) => {
+                            let value = e.target.value;
+                            setFname(value)
+                            if ( value != "" )
+                            {
+                                setFnameError("");
+                            }
+                            else
+                            {
+                                setFnameError("This field is required.");
+                            }
+                        }
+                    } 
+                    fullWidth/>
+                <TextField 
+                    error={lnameError != "" ? true : false} 
+                    helperText={lnameError} 
+                    required 
+                    id="lname" 
+                    label="Last Name" 
+                    variant="outlined" 
+                    value={lname} 
+                    onChange={
+                        (e) => {
+                            let value = e.target.value;
+                            setLname(value)
+                            if ( value != "" )
+                            {
+                                setLnameError("");
+                            } 
+                            else
+                            {
+                                setLnameError("This field is required.");
+                            }
+                        }
+                    }  
+                    fullWidth/>
+                <TextField 
+                    error={emailError != "" ? true : false} 
+                    helperText={emailError} 
+                    required 
+                    id="email" 
+                    label="Email" 
+                    variant="outlined" 
+                    value={email} 
+                    onChange={
+                        (e) => {
+                            let value = e.target.value;
+                            setEmail(value)
+                            if ( value != "" )
+                            {
+                                setEmailError("");
+                                ValidateEmail(value);
+                            } 
+                            else
+                            {
+                                setEmailError("This field is required.");
+                            }
+                        }
+                    }  
+                    fullWidth />
+                <TextField 
+                    error={messageError != "" ? true : false} 
+                    helperText={messageError} 
+                    required 
+                    id="message" 
+                    label="Message" 
+                    variant="outlined" 
+                    value={message} 
+                    onChange={
+                        (e) => {
+                            let value = e.target.value;
+                            setMessage(value)
+                            if ( value != "" )
+                            {
+                                setMessageError("");
+                            } 
+                            else
+                            {
+                                setMessageError("This field is required.");
+                            }
+                        }
+                    }  
+                    multiline 
+                    rows={5} 
+                    fullWidth />
                 <div className={ isMobile ? classes.rowMobile : classes.row }>
-                    <Button type="reset" color="secondary" size="large">Clear</Button>
+                    <Button type="reset" color="secondary" size="large" onClick={resetErrors}>Clear</Button>
                     <CircularProgress color="primary" className={clsx( classes.hide,{
                         [classes.show]: submitting
                     })}/>
