@@ -98,8 +98,6 @@ export default function ContactForm() {
             body: new URLSearchParams({ email, body }).toString(),
         });
 
-        console.log(response);
-
         if (response.status === 200) {
             setError(null);
             setSubmitting(false);
@@ -109,7 +107,6 @@ export default function ContactForm() {
             setMessage("");
         } else {
             const json = await response.json()
-            console.log(json);
             setError(json.error);
             setSubmitting(false);
         }
