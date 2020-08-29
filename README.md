@@ -51,12 +51,17 @@ Kick off your portfolio with this boilerplate. This uses Gatsby to get up and ru
     Add your own projects by creating markdown files, filling in these fields in the frontmatter;
     
     slug: {slug}
+    
     date: [some date]
+    
     title: [some title]
+    
     image: [path to image]
+    
     techStack:
       - [language 1]
       - [language 2] 
+    
     description: [some text]
     
 1. **Use your own email service to sonfigure the contact form**
