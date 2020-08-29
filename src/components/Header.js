@@ -134,7 +134,6 @@ const Header = ({data}) => {
             <Helmet>
                 <title>{ title }</title>
                 <meta name="description" content={description}/>
-                <link rel="icon" type="image/ico" href="favicon.ico"/>
             </Helmet>
             { 
                 isMobile && 
