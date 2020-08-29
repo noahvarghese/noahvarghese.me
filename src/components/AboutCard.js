@@ -187,8 +187,10 @@ export default function AboutCard() {
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography variant="body2" component="p" className={classes.pos}>
-                        I learned software development from Mohawk College, and through my own projects.
-                        My main interests lie in both mobile and web app development, as well as dev ops and automation.
+                        I am primarily experienced in web and mobile application development, with interests in dev ops and automation.
+                    </Typography>
+                    <Typography variant="body2" component="p" className={classes.pos}>
+                        My major accomplishments lie in working with clients to implement a product they are proud of! Some examples of this are the mobile application I worked on with a team in my internship, as well as the quote calculator I worked on for an acoustic paneling company.
                     </Typography>
                     <Typography variant="body2" component="p" className={classes.pos}>
                         When I'm not in front of my computer you can find me playing the guitar, or hiking through whatever forrest I can find.
