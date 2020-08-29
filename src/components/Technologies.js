@@ -56,6 +56,7 @@ export default function Technologies() {
                 <img alt="jquery" src="/img/jquery.png" className={classes.img}/>
                 <img alt="python" src="/img/python.svg" className={classes.img}/>
                 <img alt="ruby" src="/img/ruby.png" className={classes.img}/>
+                <img alt="travis ci" src="/img/travis.png" className={classes.imgSmall}/>
         </>
     )
 }
