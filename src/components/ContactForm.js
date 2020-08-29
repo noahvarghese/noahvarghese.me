@@ -132,23 +132,24 @@ export default function ContactForm() {
                     },
                     body: new URLSearchParams({ email, body }).toString(),
                 });
-            } catch ( error ) {
-                setSubmitting(false);
-                setErrorOpen(true);
-            }
     
-            if (response.status === 200) {
-                setError(null);
-                setSubmitting(false);
-                setFname("");
-                setLname("");
-                setEmail("");
-                setMessage("");
-                setOpen(true);
-            } else {
-                const json = await response.json()
-                console.log(json);
-                setError(json.error);
+                if (response.status === 200) {
+                    setError(null);
+                    setSubmitting(false);
+                    setFname("");
+                    setLname("");
+                    setEmail("");
+                    setMessage("");
+                    setOpen(true);
+                } else {
+                    const json = await response.json()
+                    console.log(json);
+                    setError(json.error);
+                    setSubmitting(false);
+                    setErrorOpen(true);
+                }
+                
+            } catch ( error ) {
                 setSubmitting(false);
                 setErrorOpen(true);
             }
