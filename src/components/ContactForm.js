@@ -4,11 +4,16 @@ import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 import {
     makeStyles
 } from '@material-ui/core/styles';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery, CircularProgress, Snackbar } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import Card from '@material-ui/core/Card';
 import Button from "@material-ui/core/Button";
 import Typography from '@material-ui/core/Typography';
 import { TextField } from '@material-ui/core';
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     root: {
@@ -47,7 +52,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
         },
     },
     row: {
-        marginLeft: "2em",
+        marginTop: "1rem",
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
@@ -71,6 +76,12 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     },
     portraitMobileTitle: {
         marginLeft: "1em"
+    },
+    hide: {
+        display: "none",
+    },
+    show: {
+        display: "block"
     }
 }));
 
@@ -82,35 +93,60 @@ export default function ContactForm() {
     let [message, setMessage] = useState("");
     let [error, setError] = useState("");
     let [submitting, setSubmitting] = useState("");
+    let [open, setOpen] = useState(false);
+    let [errorOpen, setErrorOpen] = useState(false);
+  
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpen(false);
+    };
+  
+    const handleErrorClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setErrorOpen(false);
+    };
 
 
     const sendEmail = async (event) => {
 
         event.preventDefault();
+
+        if ( submitting == false )
+        {
+            setSubmitting(true);
         
-        const body = 'From: ' + fname + " " + lname + '\n\nEmail: ' + email + '\n\nMessage: ' + message;
-
-        const response = await fetch("https://chestnut-shrimp-6053.twil.io/send-email", {
-            method: "post",
-            headers: {
-                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-            },
-            body: new URLSearchParams({ email, body }).toString(),
-        });
-
-        if (response.status === 200) {
-            setError(null);
-            setSubmitting(false);
-            setFname("");
-            setLname("");
-            setEmail("");
-            setMessage("");
-        } else {
-            const json = await response.json()
-            setError(json.error);
-            setSubmitting(false);
+            const body = 'From: ' + fname + " " + lname + '\n\nEmail: ' + email + '\n\nMessage: ' + message;
+    
+            const response = await fetch("https://chestnut-shrimp-6053.twil.io/send-email", {
+                method: "post",
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                },
+                body: new URLSearchParams({ email, body }).toString(),
+            });
+    
+            if (response.status === 200) {
+                setError(null);
+                setSubmitting(false);
+                setFname("");
+                setLname("");
+                setEmail("");
+                setMessage("");
+                setOpen(true);
+            } else {
+                const json = await response.json()
+                console.log(json);
+                setError(json.error);
+                setSubmitting(false);
+                setErrorOpen(true);
+            }
         }
-
     }
 
     const classes = useStyles();
@@ -127,7 +163,20 @@ export default function ContactForm() {
                 <TextField required id="message" label="Message" variant="outlined" value={message} onChange={(e) => {setMessage(e.target.value)}}  multiline rows={5} fullWidth />
                 <div className={ isMobile ? classes.rowMobile : classes.row }>
                     <Button type="reset" color="secondary" size="large">Clear</Button>
+                    <CircularProgress color="primary" className={clsx( classes.hide,{
+                        [classes.show]: submitting
+                    })}/>
                     <Button type="submit" color="primary" size="large" onClick={sendEmail}>Submit</Button>
+                    <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                        <Alert severity="success" onClose={handleClose}>
+                            Message sent!
+                        </Alert>
+                    </Snackbar>
+                    <Snackbar open={errorOpen} autoHideDuration={5000} onClose={handleErrorClose}>
+                        <Alert severity="error" onClose={handleErrorClose} >
+                            There was an error.
+                        </Alert>
+                    </Snackbar>
                 </div>
             </form>
         </Card>
