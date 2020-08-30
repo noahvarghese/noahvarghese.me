@@ -20,6 +20,7 @@ const useStyles = makeStyles(({transitions}) => ({
         width: "100vw",
     },    
     navMobile: {
+        position: 'fixed',
         width: "100vw",
         zIndex: 10,
     },

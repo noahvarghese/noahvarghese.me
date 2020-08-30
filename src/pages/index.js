@@ -36,7 +36,7 @@ const useStyles = makeStyles({
       flexDirection: "row",
       flexWrap: "wrap",
       alignItems: "center",
-      justifyContent: "space-between",
+      justifyContent: "space-around",
       flex: "1 1 0px"
   },
   title: {
