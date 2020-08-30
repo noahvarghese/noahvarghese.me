@@ -12,12 +12,14 @@ import clsx from 'clsx';
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     container: {
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        right: 0,
-        bottom: 0,
-        transform: "translate(-50%, -50%)"
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '85vh',
+        width: '100%',
+        margin: 'auto',
     },
     root: {
         marginTop: "2rem",
@@ -30,16 +32,18 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
         marginLeft: 'auto',
         overflow: 'initial',
         background: '#ffffff',
-        alignItems: 'center',
-        position: "relative",
         paddingBottom: spacing(2),
         [breakpoints.up('md')]: {
             paddingTop: spacing(2),
         },
         minWidth: 275,
-        width: "40em",
-        height: "12em",
+        minHeight: '12rem',
+        maxWidth: '95%',
         padding: "2em",
+        justifyContent: 'center',
+    },
+    rootMobile: {
+
     },
     bullet: {
         display: 'inline-block',

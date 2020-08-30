@@ -58,7 +58,7 @@ const useStyles = makeStyles(({transitions}) => ({
         textAlign: "center"
     },
     menu: {
-        color: "white",
+        color: "#2196f3",
         fontSize: "2em",
     },
     expand: {

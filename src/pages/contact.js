@@ -19,8 +19,8 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
       margin: "auto",
     },
     rootMobile: {
+        paddingTop: '4rem',
         overflowX: "hidden",
-        position: "relative",
     }
 }));
 

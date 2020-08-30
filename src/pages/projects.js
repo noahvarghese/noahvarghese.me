@@ -6,11 +6,9 @@ import Header from "../components/Header";
 import Wave from "../components/Wave";
 import Project from "../components/Project";
 import { graphql } from "gatsby";
+import { useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    projects: {
-
-    },
     container: {
         height: "100%",
         width: "90%",
@@ -23,6 +21,19 @@ const useStyles = makeStyles({
         margin: "auto",
         position: "relative"
     },
+
+    containerMobile: {
+      paddingTop: '4rem',
+      width: "90%",
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "space-between",
+      alignItems: "center",
+      alignContent: "space-around",
+      margin: "auto",
+      position: "relative"
+    }
 });
 
 const Projects = ({ 
@@ -34,13 +45,14 @@ const Projects = ({
     .map(edge => <Project key={edge.node.id} project={edge.node} />);
 
 
+    const isMobile = useMediaQuery('(max-width: 600px)');
     const classes = useStyles();
 
     return (
         <>
             <Wave/>
             <Header/>
-            <div className={classes.container}>
+            <div className={isMobile ? classes.containerMobile : classes.container}>
                 { projects }
             </div>
             
