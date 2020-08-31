@@ -5,12 +5,7 @@ import {
 import clsx from 'clsx';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 import { 
-    Card, 
-    CardMedia, 
-    CardActions, 
-    CardContent, 
     Collapse,
-    Typography, 
     IconButton,
     Link 
 } from "@material-ui/core";
@@ -24,6 +19,9 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
     img: {
         width: "100%",
         marginTop: '-2rem',
+    },
+    header: {
+        textAlign: 'center'
     },
     innerContainer: {
         borderRadius: "50%",
@@ -163,7 +161,7 @@ export default function AboutCard() {
                     </div>
                 </div>
                 <div className={classes.heading}>
-                    <p>
+                    <p className={classes.header}>
                         Hi! I'm Noah, I'm a software developer based out of Ontario. 
                     </p>
                     <IconButton
