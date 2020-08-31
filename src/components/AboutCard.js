@@ -115,7 +115,8 @@ const useStyles = makeStyles(({ breakpoints, spacing, transitions }) => ({
         justifyContent: 'center',
     },
     p: {
-        paddingBottom: '1rem'
+        paddingBottom: '2rem',
+        lineHeight: '1.75rem'
     },
     image: {
         fontSize: "2em",
