@@ -17,8 +17,7 @@ dotenv.config();
 const connectToMongoose = async () => {
     const { DB_NAME, DB_HOST, DB_USER, DB_PWD } = process.env;
 
-    const uri = "mongodb+srv://me:connectME2020@me.t5nyn.mongodb.net/me?retryWrites=true&w=majority";
-    // const uri = `mongodb+srv://${DB_USER}:${DB_PWD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
+    const uri = `mongodb+srv://${DB_USER}:${DB_PWD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
     try {
         await mongoose.connect(uri, { w: "majority", useNewUrlParser: true, useUnifiedTopology: true });
         Logs.addLog("Connected to database.", LogLevels.EVENT);
