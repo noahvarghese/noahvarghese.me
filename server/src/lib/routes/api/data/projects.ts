@@ -22,8 +22,7 @@ router.post("/projects", passport.authenticate("local"), async (req: Request, re
     Object.entries(req.body).forEach(([key, value]) => {
         req.body[key] = validator.escape(value as string);
     });
-    const project = await Project.create(req.body);
-    await project.save();
+    await Project.create(req.body);
     res.sendStatus(200);
 });
 
@@ -44,9 +43,6 @@ router.delete("/projects/id", passport.authenticate("local"), async (req: Reques
     const { id } = req.query;
 
     if (id) {
-        Object.entries(req.body).forEach(([key, value]) => {
-            req.body[key] = validator.escape(value as string);
-        });
         await Project.findByIdAndDelete(id);
         res.sendStatus(200);
     }

@@ -22,8 +22,7 @@ router.post("/jobs", passport.authenticate("local"), async (req: Request, res: R
     Object.entries(req.body).forEach(([key, value]) => {
         req.body[key] = validator.escape(value as string);
     });
-    const job = await Job.create(req.body);
-    await job.save();
+    await Job.create(req.body);
     res.sendStatus(200);
 });
 
