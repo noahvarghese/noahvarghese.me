@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS athios;
+CREATE DATABASE athios;
+USE athios;
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    hashed_password VARCHAR(255) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    created_on DATETIME NOT NULL DEFAULT NOW(),
+    updated_on DATETIME NOT NULL DEFAULT NOW(),
+    PRIMARY KEY (id),
+);
+
+CREATE TABLE
+
+CREATE TABLE jobs (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    company VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    province VARCHAR(2) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    starting_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    ending_date DATE DEFAULT NULL,
+    created_on DATETIME NOT NULL DEFAULT NOW(),
+    updated_on DATETIME NOT NULL DEFAULT NOW()
+);
