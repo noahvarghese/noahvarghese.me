@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
+import passport from "passport";
 import Project from "../../../models/projects";
-import authMiddleware from "../../../middleware";
 
 const router = Router();
 
@@ -17,19 +17,19 @@ router.get("/projects/:id", async (req: Request, res: Response) => {
     res.send(project);
 });
 
-router.post("/projects", authMiddleware, async (req: Request, res: Response) => {
+router.post("/projects", passport.authenticate("local"), async (req: Request, res: Response) => {
     const project = await Project.create(req.body);
     await project.save();
     res.sendStatus(200);
 });
 
-router.put("/projects/:id", authMiddleware, async (req: Request, res: Response) => {
+router.put("/projects/:id", passport.authenticate("local"), async (req: Request, res: Response) => {
     const { id } = req.query;
     await Project.findByIdAndUpdate(id, req.body);
     res.sendStatus(200);
 });
 
-router.delete("/projects/id", authMiddleware, async (req: Request, res: Response) => {
+router.delete("/projects/id", passport.authenticate("local"), async (req: Request, res: Response) => {
     const { id } = req.query;
     await Project.findByIdAndDelete(id);
     res.sendStatus(200);

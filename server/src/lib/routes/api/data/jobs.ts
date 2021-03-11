@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import Job from "../../../models/jobs";
-import authMiddleware from "../../../middleware";
+import passport from "passport";
 
 const router = Router();
 
@@ -17,19 +17,19 @@ router.get("/jobs/:id", async (req: Request, res: Response) => {
     res.send(job);
 });
 
-router.post("/jobs", authMiddleware, async (req: Request, res: Response) => {
+router.post("/jobs", passport.authenticate("local"), async (req: Request, res: Response) => {
     const job = await Job.create(req.body);
     await job.save();
     res.sendStatus(200);
 });
 
-router.put("/jobs/:id", authMiddleware, async (req: Request, res: Response) => {
+router.put("/jobs/:id", passport.authenticate("local"), async (req: Request, res: Response) => {
     const { id } = req.query;
     await Job.findByIdAndUpdate(id, req.body);
     res.sendStatus(200);
 });
 
-router.delete("/jobs/id", authMiddleware, async (req: Request, res: Response) => {
+router.delete("/jobs/:id", passport.authenticate("local"), async (req: Request, res: Response) => {
     const { id } = req.query;
     await Job.findByIdAndDelete(id);
     res.sendStatus(200);

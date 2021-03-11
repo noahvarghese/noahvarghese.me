@@ -1,16 +1,30 @@
 import mongoose, { Schema } from "mongoose";
 
 export const projectSchema = new Schema({
-    name: String,
-    url: String,
-    areas: Array,
-    highlights: Array,
+    name: {
+        type: String,
+        required: true,
+    },
+    url: {
+        type: String,
+        required: true
+    },
+    areas: {
+        type: Array,
+        required: true
+    },
+    highlights: {
+        type: Array,
+        required: true
+    },
     createdOn: {
         type: Date,
+        required: true,
         default: new Date()
     },
     updatedOn: {
         type: Date,
+        required: true,
         default: new Date()
     }
 });
