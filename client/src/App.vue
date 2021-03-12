@@ -2,6 +2,7 @@
   <div id="app">
     <Header />
     <About />
+    <Experience />
   </div>
 </template>
 
@@ -9,11 +10,13 @@
   import { defineComponent } from "vue";
   import Header from "@/components/Header.vue";
   import About from "@/components/About.vue";
+  import Experience from "@/components/Experience.vue";
 
   export default defineComponent({
     components: {
       Header,
-      About
+      About,
+      Experience
     }
   })
 </script>
@@ -67,6 +70,16 @@
     font-size: 1.5rem;
   }
 
+  h4 {
+    font-family: MontserratRegular;
+    font-size: 1.25rem;
+    margin: 0;
+
+    &.company {
+      color: $accentColor;
+    }
+  }
+
   ul { 
     list-style-type: none;
   }
@@ -85,5 +98,38 @@
   a:hover {
     color: $accentColor;
     transition: color 0.25s;
+  }
+
+  .topLevelContainer {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: row;
+        // flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15rem;
+        line-height: 1.75rem;
+  }
+  .rightFloat {
+    flex: 0 0 20%;
+  }
+
+  .experienceHeader {
+    .experienceDetails {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      align-items: flex-start;
+
+      .location, .dateRange {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 15rem;
+
+      }
+    }
   }
 </style>
