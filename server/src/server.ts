@@ -35,6 +35,7 @@ process.title = "node-server";
 
     app.use(express.urlencoded({ extended: true }));
 
+    /* Start authentication */
     app.use(cookieParser());
 
     app.use(expressSession({
@@ -86,6 +87,8 @@ process.title = "node-server";
             done(err, user);
         });
     });
+
+    /* end authenctication */
 
     app.use("/", router);
 
