@@ -1,6 +1,7 @@
 import * as React from "React";
 import { SkillLevel, technical_skills } from "../data/technical_skills";
 import { interpersonal_skills } from "../data/interpersonal_skills";
+import "./home.scss";
 
 export const HomeComponent = () => {
     const conversant = technical_skills.filter((skill) => skill.level === SkillLevel.CONVERSANT);
