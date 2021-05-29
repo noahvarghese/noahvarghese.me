@@ -1,0 +1,48 @@
+@keyframes rollout {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20rem;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes rollout {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20rem;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes rollout {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20rem;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes rollout {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20rem;
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes rollout {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20rem;
+    }
+}

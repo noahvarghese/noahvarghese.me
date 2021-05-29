@@ -1,3 +1,5 @@
+@import "../styles/rollout.scss";
+
 #header {
     display: flex;
     flex-direction: row;
@@ -18,6 +20,23 @@
         height: 20rem;
         img {
             height: 100%;
+            opacity: 0;
+
+            -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+            -webkit-animation-delay: 0s;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation: fadein 2s; /* Firefox < 16 */
+            -moz-animation-delay: 0s;
+            -moz-animation-fill-mode: forwards;
+            -ms-animation: fadein 2s; /* Internet Explorer */
+            -ms-animation-delay: 0s;
+            -ms-animation-fill-mode: forwards;
+            -o-animation: fadein 2s; /* Opera < 12.1 */
+            -o-animation-delay: 0s;
+            -o-animation-fill-mode: forwards;
+            animation: fadein 2s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
         }
     }
 
@@ -46,6 +65,27 @@
                     img {
                         width: 100%;
                     }
+                }
+                a,
+                p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    max-width: 15rem;
+                    -webkit-animation: rollout 2s; /* Safari, Chrome and Opera > 12.1 */
+                    -webkit-animation-delay: 0s;
+                    -webkit-animation-fill-mode: forwards;
+                    -moz-animation: rollout 2s; /* Firefox < 16 */
+                    -moz-animation-delay: 0s;
+                    -moz-animation-fill-mode: forwards;
+                    -ms-animation: rollout 2s; /* Internet Explorer */
+                    -ms-animation-delay: 0s;
+                    -ms-animation-fill-mode: forwards;
+                    -o-animation: rollout 2s; /* Opera < 12.1 */
+                    -o-animation-delay: 0s;
+                    -o-animation-fill-mode: forwards;
+                    animation: rollout 2s;
+                    animation-delay: 0s;
+                    animation-fill-mode: forwards;
                 }
             }
         }
