@@ -42,9 +42,18 @@ h3 {
 footer {
     border-top: 1px solid #d3d3d3;
     padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: white;
     margin-top: 5rem;
     display: flex;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 4rem);
+}
+
+main {
+    padding-bottom: 8rem;
 }
 
 nav {
