@@ -8,8 +8,7 @@ import Linkedin from "../images/linkedin.png";
 import Github from "../images/Github.png";
 import Email from "../images/ic_email_24px.png";
 import {Helmet } from "react-helmet";
-import { SkillLevel, technical_skills } from "../data/technical_skills";
-import { interpersonal_skills } from "../data/interpersonal_skills";
+import {HomeComponent} from "../components/home";
 
 const pages = {
     HOME: "/",
@@ -19,14 +18,21 @@ const pages = {
 
 const IndexPage = () => {
     const [selectedPage, changeSelectedPage] = React.useState(pages.HOME);
+    const [Component, setComponent] = React.useState(HomeComponent);
+
 
     const changeSelected = (page) => (e) => {
         e.preventDefault();
         changeSelectedPage(page);
+        
+        if ( page === pages.HOME ) {
+            setComponent(HomeComponent);
+        } else if ( page === pages.PROJECTS ) {
+            // setComponent(null);
+        } else if (page === pages.EXPERIENCE) {
+            // setComponent(null);
+        } 
     }
-
-    const conversant = technical_skills.filter((skill) => skill.level === SkillLevel.CONVERSANT);
-    const proficient = technical_skills.filter(skill => skill.level === SkillLevel.PROFICIENT);
 
     return (
         <main>
@@ -85,42 +91,9 @@ const IndexPage = () => {
                         <img src={Me} alt="a picture of me" />
                     </div>
                 </div>
-                <div id="message">
-                    <p>Hi! Welcome to my website, whether you're looking for someone to jumpstart your next venture, find out more about me, or looking to hire, feel free to look around!</p>
-                </div>
-                <div id="about">
-                    <div id="stack">
-                    <div id="education">
-                        <h3>Education</h3>
-                        <ul>
-                            <li>
-                                <p>Adv. Diploma - Software Development</p>
-                                <p>Mohawk College</p>
-                                <p>2021</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="interpersonal">
-                        <h3>Interpersonal Skills</h3>
-                        <ul>{interpersonal_skills.map((skill, index) => <li key={index}>{skill}</li>)}</ul>
-                    </div>
-                    </div>
-                    <div id="technical">
-                        <h3>Technical Skills</h3>
-                        <ul>
-                            <li>
-                                <p>Proficient In:</p>
-                                <ul>{proficient.map((skill, index) => <li key={index}>{skill.name}</li>)}</ul>    
-                            </li>
-                            <li>
-                                <p>Conversant In:</p>
-                                <ul>
-                                    {conversant.map((skill, index) => <li key={index}>{skill.name}</li>)}
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                {
+                    selectedPage === pages.PROJECTS ? null : selectedPage === pages.EXPERIENCE ? null : (<HomeComponent />)  
+                }
             </div>
             <footer>
                 <div id="footerContent">
