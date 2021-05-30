@@ -5,6 +5,7 @@ import "./index.scss";
 import {Helmet } from "react-helmet";
 import {HomeComponent} from "../components/home";
 import {Experience} from "../components/experience";
+import {Projects} from "../components/projects";
 import { Nav } from "../components/nav";
 import { Header } from "../components/header";
 import { pages } from "../data/pages";
@@ -30,7 +31,7 @@ const IndexPage = () => {
             <div id="body">
                 <Header />
                 {
-                    selectedPage === pages.PROJECTS ? null : selectedPage === pages.EXPERIENCE ? (<Experience />) : (<HomeComponent />)  
+                    selectedPage === pages.PROJECTS ? (<Projects />) : selectedPage === pages.EXPERIENCE ? (<Experience />) : (<HomeComponent />)  
                 }
             </div>
             <footer>
