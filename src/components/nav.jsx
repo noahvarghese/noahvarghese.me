@@ -1,8 +1,8 @@
-import * as React from "React";
+import * as React from "react";
 import "./nav.scss";
 import { pages } from "../data/pages";
 
-export const Nav = ({changeSelected, selectedPage}) => {
+export const Nav = ({ changeSelected, selectedPage }) => {
     return (
         <nav>
             <div id="title">
@@ -13,10 +13,18 @@ export const Nav = ({changeSelected, selectedPage}) => {
                 <li className={selectedPage === pages.HOME ? "selected" : ""}>
                     <a onClick={changeSelected(pages.HOME)}>Home</a>
                 </li>
-                <li className={selectedPage === pages.EXPERIENCE ? "selected" : ""}>
+                <li
+                    className={
+                        selectedPage === pages.EXPERIENCE ? "selected" : ""
+                    }
+                >
                     <a onClick={changeSelected(pages.EXPERIENCE)}>Experience</a>
                 </li>
-                <li className={selectedPage === pages.PROJECTS ? "selected" : ""}>
+                <li
+                    className={
+                        selectedPage === pages.PROJECTS ? "selected" : ""
+                    }
+                >
                     <a onClick={changeSelected(pages.PROJECTS)}>Projects</a>
                 </li>
             </ul>
