@@ -3,12 +3,15 @@
 nav {
     max-width: 100%;
     margin-bottom: 8rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 4rem;
+
+    @media only screen and (min-width: 949px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: 4rem;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
 
     #title {
         text-transform: uppercase;
@@ -26,6 +29,10 @@ nav {
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
+
+        @media only screen and (max-width: 948px) {
+            margin-top: 2rem;
+        }
 
         li {
             height: 100%;
