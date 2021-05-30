@@ -1,0 +1,12 @@
+h3 {
+    margin-bottom: 2rem;
+}
+.project {
+    width: 40rem;
+    max-width: 95%;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    &:not(:last-of-type) {
+        border-bottom: 1px solid #d3d3d3;
+    }
+}

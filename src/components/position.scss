@@ -8,8 +8,6 @@
         margin-bottom: 1rem;
 
         h4 {
-            font-family: Montserrat, sans-serif;
-            font-weight: 400;
             &.company {
                 color: $highlight-color;
             }
@@ -30,11 +28,8 @@
 
             .job-img-container {
                 height: 1.5rem;
-                position: relative;
 
                 img {
-                    // position: absolute;
-                    // top: -5px;
                     height: 100%;
                 }
             }

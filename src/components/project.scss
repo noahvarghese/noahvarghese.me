@@ -1,1 +1,46 @@
 @import "../styles/colors.scss";
+
+.project {
+    .proj-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 1rem;
+
+        .proj-url-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            max-width: 90vw;
+
+            .proj-url-img-container {
+                height: 1.5rem;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            h4 {
+                a {
+                    word-wrap: break-all;
+                    word-break: break-all;
+                    overflow-wrap: break-word;
+                    font-family: Montserrat, sans-serif;
+                    font-weight: 400;
+                    color: $highlight-color;
+                }
+            }
+        }
+
+        h4.tags {
+            font-weight: 400;
+            font-size: 0.75rem;
+        }
+    }
+
+    p.details {
+        line-height: 1.75rem;
+    }
+}

@@ -26,6 +26,7 @@ const IndexPage = () => {
             <Helmet>
                 <meta charset="utf-8"/>
                 <title>Noah Varghese</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
             </Helmet>
             <Nav changeSelected={changeSelected} selectedPage={selectedPage}/>
             <div id="body">
