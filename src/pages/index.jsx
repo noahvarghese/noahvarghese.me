@@ -4,6 +4,7 @@ import "../fonts/Roboto/Roboto.css";
 import "./index.scss";
 import {Helmet } from "react-helmet";
 import {HomeComponent} from "../components/home";
+import {Experience} from "../components/experience";
 import { Nav } from "../components/nav";
 import { Header } from "../components/header";
 import { pages } from "../data/pages";
@@ -29,7 +30,7 @@ const IndexPage = () => {
             <div id="body">
                 <Header />
                 {
-                    selectedPage === pages.PROJECTS ? null : selectedPage === pages.EXPERIENCE ? null : (<HomeComponent />)  
+                    selectedPage === pages.PROJECTS ? null : selectedPage === pages.EXPERIENCE ? (<Experience />) : (<HomeComponent />)  
                 }
             </div>
             <footer>
