@@ -1,11 +1,54 @@
 export interface ProjectAttributes {
     name: string;
+    // If project is not launched, use github url here
     url: string;
+    github?: string | string[];
     tags?: string[];
     details: string | string[];
 }
 
 export const projects: ProjectAttributes[] = [
+    {
+        name: "OnBoard",
+        url: "capstone.noahvarghese.me",
+        github: [
+            "GitHub.com/noahvarghese/capstone-server",
+            "GitHub.com/noahvarghese/capstone-client",
+        ],
+        details: [
+            "WORK IN PROGRESS",
+            "Full stack web app",
+            "Decoupled client and server both written in TypeScript",
+            "Automated testing performed in CI/CD pipeline via GitHub Actions",
+            "Client written in react, utilizes functional and class based components",
+            "Utilizes React's Context API",
+            "Uses Material UI component library",
+            "RESTful API design",
+            "API designed/documented via OpenAPI and Swagger",
+            "API running on a ExpressJS/NodeJS server hosted using AWS Elastic Beanstalk",
+            "Utilized Test Driven Development (TDD)",
+            "Both client and server use Jest to provide unit testing",
+        ],
+    },
+    {
+        name: "@noahvarghese/react-components",
+        url: "GitHub.com/noahvarghese/react-components",
+        details: [
+            "NPM package providing reusable React components",
+            "Used to learn NPM",
+            "Implemented custom theming system using CSS preprocessor SCSS",
+        ],
+    },
+    {
+        name: "Restaurant Locator",
+        url: "GitHub.com/noahvarghese/restaurant",
+        details: [
+            "Single page application using vanilla JS, HTML and CSS",
+            "Consumes Yelp's RESTful API",
+            "Parses and displays JSON data",
+            "Utilizes browsers geolocation API or user input to get user's location",
+        ],
+    },
     {
         name: "CryptoTool",
         url: "GitHub.com/noahvarghese/cryptoTool",
@@ -38,23 +81,16 @@ export const projects: ProjectAttributes[] = [
         url: "GitHub.com/noahvarghese/vue-grading-app",
         details: [
             "Basic Vue app without usage of NPM or vue-cli",
-            "SPA without persistent data storage",
+            "Explores state management",
+            "Provides a server to serve the HTML page",
         ],
     },
     {
         name: "Todo - React",
         url: "GitHub.com/noahvarghese/todo",
-        details:
-            "This project is a glorified todo list. It was used to learn the basics of React. No explanation necessary as everyone and there mother has probably done one.",
-    },
-    {
-        name: "Restaurant Locator",
-        url: "GitHub.com/noahvarghese/restaurant",
         details: [
-            "Single page application using vanilla JS, HTML and CSS",
-            "Consumes Yelp's RESTful API",
-            "Parses and displays JSON data",
-            "Utilizes browsers geolocation API or user input to get user's location",
+            "Basic React APP using create-react-app",
+            "Basic state management",
         ],
     },
 ];
