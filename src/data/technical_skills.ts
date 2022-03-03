@@ -36,6 +36,7 @@ export const technical_skills = [
     new Skill("Go", SkillLevel.CONVERSANT),
     new Skill("SASS", SkillLevel.CONVERSANT),
     new Skill("CI/CD", SkillLevel.CONVERSANT),
+    new Skill("Windows Server", SkillLevel.CONVERSANT),
     new Skill("Cloud Providers (AWS)", SkillLevel.CONVERSANT),
     new Skill(
         "AWS (S3, EC2, ElasticBeanstalk, Serverless Stack, API Gateway, RDS, Route53)",
