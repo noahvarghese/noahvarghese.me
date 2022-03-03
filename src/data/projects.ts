@@ -32,9 +32,11 @@ export const projects: ProjectAttributes[] = [
     },
     {
         name: "@noahvarghese/react-components",
-        url: "GitHub.com/noahvarghese/react-components",
+        url: "npmjs.com/package/@noahvarghese/react-components",
+        github: "GitHub.com/noahvarghese/react-components",
         details: [
             "NPM package providing reusable React components",
+            "Peaked at 790 downloads for the week of September 9th 2021 - September 15th 2021",
             "Used to learn NPM",
             "Implemented custom theming system using CSS preprocessor SCSS",
         ],
