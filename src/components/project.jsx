@@ -15,9 +15,19 @@ export const Project = ({ project }) => {
                         <a href={`https://${project.url}`}>{project.url}</a>
                     </h4>
                 </div>
-                <h4 className="tags">{project.tags.join(" | ")}</h4>
+                {project.tags ? (
+                    <h4 className="tags">{project.tags.join(" | ")}</h4>
+                ) : null}
             </div>
-            <p className="details">{project.details}</p>
+            {Array.isArray(project.details) ? (
+                <ul className="details">
+                    {project.details.map((d) => (
+                        <li>{d}</li>
+                    ))}
+                </ul>
+            ) : (
+                <p className="details">{project.details}</p>
+            )}
         </div>
     );
 };

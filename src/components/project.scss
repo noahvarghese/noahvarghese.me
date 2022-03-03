@@ -39,6 +39,21 @@
             font-size: 0.75rem;
         }
     }
+    .details {
+        margin-top: 2rem;
+    }
+    ul.details {
+        margin-left: 1.25rem;
+        list-style-type: disc;
+
+        li:not(:last-of-type) {
+            margin-bottom: 1.5rem;
+        }
+
+        li:not(:first-of-type) {
+            margin-top: 1.5rem;
+        }
+    }
 
     p.details {
         line-height: 1.75rem;
