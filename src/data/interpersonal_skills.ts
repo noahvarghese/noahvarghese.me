@@ -4,4 +4,7 @@ export const interpersonal_skills = [
     "Teamwork",
     "Communication",
     "Organization",
+    "Growth Mindset",
+    "Desire to Learn",
+    "Embrace Challenges",
 ];
