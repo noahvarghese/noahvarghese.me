@@ -94,7 +94,7 @@ export const projects: ProjectAttributes[] = [
         name: "Todo - React",
         url: "GitHub.com/noahvarghese/todo",
         details: [
-            "Basic React APP using create-react-app",
+            "Basic React App using create-react-app",
             "Basic state management",
         ],
     },
