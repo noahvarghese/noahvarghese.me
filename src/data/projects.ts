@@ -27,6 +27,7 @@ export const projects: ProjectAttributes[] = [
             "RESTful API design",
             "API designed/documented via OpenAPI and Swagger",
             "API running on a ExpressJS/NodeJS server hosted using AWS Elastic Beanstalk",
+            "MySQL database running on AWS RDS",
             "Utilized Test Driven Development (TDD)",
             "Both client and server use Jest to provide unit testing",
         ],
