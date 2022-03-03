@@ -21,11 +21,35 @@ export interface ExperienceAttributes {
     location: string;
     start_date?: CustomDate;
     end_date?: CustomDate | "Present";
-    details: (string | string[])[];
-    tags: string[];
+    details: string[];
 }
 
 export const experience: ExperienceAttributes[] = [
+    {
+        title: "IT",
+        company: "Oakville Windows & Doors Inc.",
+        location: "Oakville ON, Canada",
+        start_date: { month: "June", year: 2021 },
+        end_date: "Present",
+        details: [
+            "Headed the installation of desktop computers and a server to increase office capacity",
+            "Implemented network configurations which boosted the network capabilities by 50%",
+            "Research, identify and appraise emerging technologies, hardware, and software to provide strategic recomendations for continuous improvement",
+            "Monitored and evaluated IT systems to ensure efficiency as well as the safety and security of data storage",
+        ],
+    },
+    {
+        title: "Web Developer",
+        company: "Freelance",
+        location: "Oakville ON, Canada",
+        start_date: { month: "October", year: 2020 },
+        end_date: "Present",
+        details: [
+            "Design, develop and host websites for small businesses",
+            "Create accessible, responsive, and functional user interfaces to allow visitors on any device to have the same perfect user experience",
+            "Tools used: React, NodeJS, Typescript, MySQL, AWS",
+        ],
+    },
     {
         title: "Application Developer",
         company: "WebSan Solutions Inc.",
@@ -33,18 +57,14 @@ export const experience: ExperienceAttributes[] = [
         start_date: { month: "January", year: 2021 },
         end_date: { month: "May", year: 2021 },
         details: [
+            "WebSan Solutions is a certified Microsoft partner, and the larget hosting provider for Microsoft Dynamics",
+            "Interface with QA and other teams to add automated integration and end to end tests to existing products",
+            "Sped up SDLC as having automated tests in place helped to catch bugs before the features reached the maintenance phase",
             "Set up QA Automation framework for existing product, thereby speeding up release cycles",
             "Used Selenium Web Driver for automated browser testing and end-to-end tests",
-            "Utilized Gherkin and BDD tools to increase cross team utilization",
+            "Utilized Cucumber/Gherkin for cross team communication of use cases and bugs",
+            "Automated testing implemented using a combination of C# / .NET Core, Selenium, SpecFlow (Cucumber), JavaScript, MsSQL",
         ],
-        tags: ["Test Automation", "Cucumber"],
-    },
-    {
-        title: "Freelance Software Developer",
-        company: "EarthLoveHome",
-        location: "Oakville ON, Canada",
-        details: ["Custom Web Design and Development for local small business"],
-        tags: ["Web Design", "Web Development"],
     },
     {
         title: "Junior Application Developer",
@@ -59,10 +79,12 @@ export const experience: ExperienceAttributes[] = [
             year: 2020,
         },
         details: [
-            "Worked as part of a team of 5 to develop a cross platform mobile application using Xamarin Framework",
-            "Developed leadership and presentation abilities through leading the presentation of the MVP",
+            "WebSan Solutions is a certified Microsoft partner, and the larget hosting provider for Microsoft Dynamics",
+            "I was brought onto an agile team of 5 that had minimal mobile development experience to create a mobile frontend for the company's ERP system",
+            "Acheived an MVP that satisfied and exceeded functionality requirements",
+            "Developed leadership and presentation abilities through leading the presentation of the MVP to the whole company",
             "Proposed and implemented features and solutions to enhance the user experience",
+            "Tools used: C# / .NET Core, Xamarin, SQLite",
         ],
-        tags: [],
     },
 ];
