@@ -28,7 +28,7 @@ export const HomeComponent = () => {
                             <li>
                                 <p>Adv. Diploma - Software Development</p>
                                 <p>Mohawk College</p>
-                                <p>2021</p>
+                                <p>2022</p>
                             </li>
                         </ul>
                     </div>
