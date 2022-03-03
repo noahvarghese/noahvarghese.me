@@ -17,6 +17,7 @@ export const projects: ProjectAttributes[] = [
         ],
         details: [
             "WORK IN PROGRESS",
+            "Paperless employee onboarding tool targeted at small businesses/restaurants",
             "Full stack web app",
             "Decoupled client and server both written in TypeScript",
             "Automated testing performed in CI/CD pipeline via GitHub Actions",
