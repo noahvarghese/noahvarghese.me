@@ -29,7 +29,7 @@ export const experience: ExperienceAttributes[] = [
         title: "IT",
         company: "Oakville Windows & Doors Inc.",
         location: "Oakville ON, Canada",
-        start_date: { month: "June", year: 2021 },
+        start_date: { month: "June", year: 2020 },
         end_date: "Present",
         details: [
             "Headed the installation of desktop computers and a server to increase office capacity",
