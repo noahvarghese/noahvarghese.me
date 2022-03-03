@@ -11,21 +11,25 @@ export const Nav = ({ changeSelected, selectedPage }) => {
             </div>
             <ul>
                 <li className={selectedPage === pages.HOME ? "selected" : ""}>
-                    <a onClick={changeSelected(pages.HOME)}>Home</a>
+                    <button onClick={changeSelected(pages.HOME)}>Home</button>
                 </li>
                 <li
                     className={
                         selectedPage === pages.EXPERIENCE ? "selected" : ""
                     }
                 >
-                    <a onClick={changeSelected(pages.EXPERIENCE)}>Experience</a>
+                    <button onClick={changeSelected(pages.EXPERIENCE)}>
+                        Experience
+                    </button>
                 </li>
                 <li
                     className={
                         selectedPage === pages.PROJECTS ? "selected" : ""
                     }
                 >
-                    <a onClick={changeSelected(pages.PROJECTS)}>Projects</a>
+                    <button onClick={changeSelected(pages.PROJECTS)}>
+                        Projects
+                    </button>
                 </li>
             </ul>
         </nav>

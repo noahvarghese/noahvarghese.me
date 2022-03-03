@@ -37,7 +37,8 @@ nav {
         li {
             height: 100%;
             display: inline-block;
-            width: 10rem;
+            min-width: min-content;
+            padding: 0 2rem;
             max-width: 30vw;
             text-align: center;
             display: flex;
@@ -45,12 +46,19 @@ nav {
             justify-content: center;
 
             &.selected {
-                a {
+                button {
                     color: $highlight-color;
                 }
             }
 
-            a {
+            button {
+                margin: 0;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+            }
+
+            button {
                 font-size: 1.2rem;
                 vertical-align: middle;
                 height: 100%;
@@ -60,6 +68,14 @@ nav {
                 justify-content: center;
                 text-align: center;
                 font-family: Roboto;
+
+                text-decoration: none;
+                transition: color 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    color: $highlight-color;
+                }
             }
         }
     }
