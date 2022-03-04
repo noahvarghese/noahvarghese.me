@@ -72,7 +72,7 @@ const Nav = () => {
     }, [setSelected]);
 
     useEffect(() => {
-        if (Sizes.indexOf(size) < Sizes.indexOf("SM") && menuOpen) {
+        if (Sizes.indexOf(size) < Sizes.indexOf("MD") && menuOpen) {
             setMenuOpen(false);
         }
     }, [size, menuOpen, setMenuOpen]);
@@ -88,7 +88,7 @@ const Nav = () => {
                     style={{
                         display:
                             // if the current size is medium or smaller
-                            Sizes.indexOf(size) >= Sizes.indexOf("SM")
+                            Sizes.indexOf(size) >= Sizes.indexOf("MD")
                                 ? "none"
                                 : "block",
                     }}
@@ -99,7 +99,7 @@ const Nav = () => {
                     style={{
                         display:
                             // if the current size is medium or smaller
-                            Sizes.indexOf(size) >= Sizes.indexOf("SM")
+                            Sizes.indexOf(size) >= Sizes.indexOf("MD")
                                 ? "block"
                                 : "none",
                     }}
@@ -117,7 +117,7 @@ const Nav = () => {
                 style={{
                     display:
                         // if the current size is medium or smaller
-                        Sizes.indexOf(size) >= Sizes.indexOf("SM")
+                        Sizes.indexOf(size) >= Sizes.indexOf("MD")
                             ? "block"
                             : "none",
                 }}
