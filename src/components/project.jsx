@@ -1,10 +1,9 @@
 import * as React from "react";
-import "./project.scss";
-import "../styles/entry.scss";
 import WWW from "../images/ic_public_24px.png";
 import GH from "../images/Github.png";
+import "./project.scss";
 
-export const Project = ({ project }) => {
+const Project = ({ project }) => {
     return (
         <div className="project entry">
             <div className="proj-header">
@@ -74,3 +73,5 @@ export const Project = ({ project }) => {
         </div>
     );
 };
+
+export default Project;

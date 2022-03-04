@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
-import { Nav } from "../components/nav";
+import Nav from "../components/nav";
 
 const NotFoundPage = () => {
     return (

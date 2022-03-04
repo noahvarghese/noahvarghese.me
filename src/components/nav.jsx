@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import "./nav.scss";
+import React, { useState, useEffect } from "react";
 import { globalHistory } from "@reach/router";
 import { Link } from "gatsby";
-import { useEffect } from "react";
+import "./nav.scss";
 
-export const Nav = () => {
+const Nav = () => {
     const [selected, setSelected] = useState(globalHistory.location.pathname);
 
     useEffect(() => {
@@ -33,3 +32,5 @@ export const Nav = () => {
         </nav>
     );
 };
+
+export default Nav;

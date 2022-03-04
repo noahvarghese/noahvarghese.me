@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import About from "../components/about";
 import Footer from "../components/footer";
-import { Nav } from "../components/nav";
+import Nav from "../components/nav";
 import { Position } from "../components/position";
 import { experience } from "../data/experience";
 

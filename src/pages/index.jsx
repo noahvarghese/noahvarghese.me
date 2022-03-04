@@ -1,13 +1,11 @@
 import * as React from "react";
-import "../fonts/Montserrat/Montserrat.css";
-import "../fonts/Roboto/Roboto.css";
-import "./index.scss";
 import { Helmet } from "react-helmet";
-import Footer from "../components/footer";
-import { Nav } from "../components/nav";
 import About from "../components/about";
+import Footer from "../components/footer";
+import Nav from "../components/nav";
 import { proficient, conversant } from "../data/technical_skills";
 import interpersonal_skills from "../data/interpersonal_skills";
+import "./index.scss";
 
 const IndexPage = () => {
     return (

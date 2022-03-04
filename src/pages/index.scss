@@ -1,8 +1,6 @@
 @import "../styles/colors.scss";
-
-* {
-    box-sizing: border-box;
-}
+@import "../fonts/Montserrat/Montserrat.css";
+@import "../fonts/Roboto/Roboto.css";
 
 @media not print {
     html {

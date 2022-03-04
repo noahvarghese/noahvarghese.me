@@ -1,8 +1,7 @@
 import * as React from "react";
-import "./position.scss";
 import Calendar from "../images/ic_date_range_24px.png";
 import LocationPin from "../images/ic_place_24px.png";
-import "../styles/entry.scss";
+import "./position.scss";
 
 export const Position = ({ job }) => {
     let PeriodComponent = null;

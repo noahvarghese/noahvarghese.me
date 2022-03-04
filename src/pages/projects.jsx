@@ -2,10 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import About from "../components/about";
 import Footer from "../components/footer";
-import { Project } from "../components/project";
-import { Nav } from "../components/nav";
+import Nav from "../components/nav";
+import Project from "../components/project";
 import { projects } from "../data/projects";
-import "../styles/entry.scss";
 
 const Projects = () => {
     return (
