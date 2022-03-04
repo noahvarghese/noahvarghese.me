@@ -1,64 +1,67 @@
-@import "../styles/colors.scss";
-@import "../fonts/Montserrat/Montserrat.css";
-@import "../fonts/Roboto/Roboto.css";
+@import "../styles/base.scss";
 
-@media not print {
-    html {
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
+main {
+    & > h3 {
+        margin-bottom: 2rem;
+    }
+
+    #skills {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        & > * {
+            max-width: 90%;
         }
-        font-size: 18px;
+
+        @media only screen and (min-width: 1100px) {
+            align-items: flex-end;
+            flex-wrap: wrap-reverse;
+        }
+
+        @media only screen and (max-width: 1099px) {
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+        }
+
+        #stack {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+
+            #education {
+                h3 {
+                    padding-bottom: 0.5rem;
+                }
+            }
+        }
+
+        #technical {
+            @media only screen and (min-width: 1100px) {
+                width: 55%;
+            }
+            @media only screen and (max-width: 1099px) {
+                width: 100%;
+            }
+        }
+
+        #technical,
+        #interpersonal {
+            ul {
+                list-style-type: disc;
+                li {
+                    margin-left: 1.5rem;
+                    padding: 0.75rem 0 0 0.25rem;
+                }
+                ul {
+                    margin-left: 0.75rem;
+                }
+            }
+        }
     }
-}
-
-@media print {
-    html {
-        font-size: 10px;
-    }
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto-Light;
-    color: black;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a,
-a:visited {
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    &:hover {
-        color: $highlight-color;
-    }
-}
-
-h2,
-h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
-
-    font-family: Monsterrat, sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-}
-
-h4 {
-    font-family: Montserrat, sans-serif;
-    font-weight: 400;
-}
-main > h3 {
-    margin-bottom: 2rem;
 }
 
 @media print {
@@ -66,6 +69,7 @@ main > h3 {
         display: none;
     }
 }
+
 @media not print {
     main {
         padding: 0 2rem 8rem 2rem;
@@ -110,62 +114,4 @@ main > h3 {
     animation: fadein 2s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
-}
-
-#skills {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-
-    & > * {
-        max-width: 90%;
-    }
-
-    @media only screen and (min-width: 1100px) {
-        align-items: flex-end;
-        flex-wrap: wrap-reverse;
-    }
-
-    @media only screen and (max-width: 1099px) {
-        justify-content: flex-end;
-        align-items: center;
-        gap: 5rem;
-        flex-wrap: wrap;
-    }
-
-    #stack {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-
-        #education {
-            h3 {
-                padding-bottom: 0.5rem;
-            }
-        }
-    }
-
-    #technical {
-        @media only screen and (min-width: 1100px) {
-            width: 55%;
-        }
-        @media only screen and (max-width: 1099px) {
-            width: 100%;
-        }
-    }
-
-    #technical,
-    #interpersonal {
-        ul {
-            list-style-type: disc;
-            li {
-                margin-left: 1.5rem;
-                padding: 0.75rem 0 0 0.25rem;
-            }
-            ul {
-                margin-left: 0.75rem;
-            }
-        }
-    }
 }
