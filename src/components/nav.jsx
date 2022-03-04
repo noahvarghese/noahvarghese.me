@@ -27,6 +27,9 @@ const NavLinks = ({ selected }) => {
             <li className={selected === "/projects" ? "selected" : ""}>
                 <Link to="/projects">Projects</Link>
             </li>
+            <li className={selected === "/resume" ? "selected" : ""}>
+                <Link to="/resume">Resum&eacute;</Link>
+            </li>
         </ul>
     );
 };
