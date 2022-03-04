@@ -3,13 +3,10 @@
 nav {
     max-width: 100%;
 
-    @media only screen and (min-width: 949px) {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        // height: 4rem;
-        justify-content: space-between;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
 
     #title {
         text-transform: uppercase;
