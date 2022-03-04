@@ -30,7 +30,7 @@ nav {
     }
 
     @media not print {
-        position: sticky;
+        position: fixed;
         top: 0;
         background-color: white;
         z-index: 10;
