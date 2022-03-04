@@ -41,7 +41,7 @@ export const projects: ProjectAttributes[] = [
             "Peaked at 790 downloads for the week of September 9th 2021 - September 15th 2021",
             "Used to learn NPM",
             "Implemented custom theming system using CSS preprocessor SCSS",
-            "Utilized React Storybook to document and test components in isolation or together",
+            "Utilized React Storybook to document and test components in isolation and together",
         ],
     },
     {

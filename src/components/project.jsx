@@ -13,7 +13,13 @@ export const Project = ({ project }) => {
                         <img alt="globe symbolizing world wide web" src={WWW} />
                     </div>
                     <h4 className="proj-url">
-                        <a href={`https://${project.url}`}>{project.url}</a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={`https://${project.url}`}
+                        >
+                            {project.url}
+                        </a>
                     </h4>
                 </div>
                 {project.github ? (
@@ -28,12 +34,22 @@ export const Project = ({ project }) => {
                             {Array.isArray(project.github) ? (
                                 project.github.map((g) => (
                                     <h5 className="proj-url">
-                                        <a href={`https://${g}`}>{g}</a>
+                                        <a
+                                            target="_blank"
+                                            href={`https://${g}`}
+                                            rel="noopener noreferrer"
+                                        >
+                                            {g}
+                                        </a>
                                     </h5>
                                 ))
                             ) : (
                                 <h5 className="proj-url">
-                                    <a href={`https://${project.github}`}>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href={`https://${project.github}`}
+                                    >
                                         {project.github}
                                     </a>
                                 </h5>
