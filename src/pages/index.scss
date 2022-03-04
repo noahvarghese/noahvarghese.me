@@ -57,6 +57,9 @@ h4 {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
 }
+main > h3 {
+    margin-bottom: 2rem;
+}
 
 @media print {
     #message {
@@ -65,9 +68,6 @@ h4 {
 }
 @media not print {
     main {
-        & > h3 {
-            margin-bottom: 2rem;
-        }
         padding: 0 2rem 8rem 2rem;
         @media only screen and (min-width: 1281px) {
             margin: auto;

@@ -69,40 +69,57 @@ const Nav = () => {
     }, [setSelected]);
 
     useEffect(() => {
-        if (Sizes.indexOf(size) < Sizes.indexOf("MD") && menuOpen) {
+        if (Sizes.indexOf(size) < Sizes.indexOf("SM") && menuOpen) {
             setMenuOpen(false);
         }
     }, [size, menuOpen, setMenuOpen]);
 
     return (
         <nav>
-            <div id="title">
-                <h1>Noah Varghese</h1>
-                <h2>Software Developer</h2>
+            <div className="nav-container">
+                <div id="title">
+                    <h1>Noah Varghese</h1>
+                    <h2>Software Developer</h2>
+                </div>
+                <div
+                    style={{
+                        display:
+                            // if the current size is medium or smaller
+                            Sizes.indexOf(size) >= Sizes.indexOf("SM")
+                                ? "none"
+                                : "block",
+                    }}
+                >
+                    <NavLinks selected={selected} />
+                </div>
+                <div
+                    style={{
+                        display:
+                            // if the current size is medium or smaller
+                            Sizes.indexOf(size) >= Sizes.indexOf("SM")
+                                ? "block"
+                                : "none",
+                    }}
+                >
+                    <button onClick={() => setMenuOpen(!menuOpen)}>
+                        {menuOpen ? <MenuOpenIcon /> : <MenuIcon />}
+                    </button>
+                </div>
             </div>
             <div
+                className={
+                    `${menuOpen ? "mobile-nav-open" : "mobile-nav-collapsed"}` +
+                    " mobile-nav"
+                }
                 style={{
                     display:
                         // if the current size is medium or smaller
-                        Sizes.indexOf(size) >= Sizes.indexOf("MD")
-                            ? "none"
-                            : "block",
-                }}
-            >
-                <NavLinks selected={selected} />
-            </div>
-            <div
-                style={{
-                    display:
-                        // if the current size is medium or smaller
-                        Sizes.indexOf(size) >= Sizes.indexOf("MD")
+                        Sizes.indexOf(size) >= Sizes.indexOf("SM")
                             ? "block"
                             : "none",
                 }}
             >
-                <button onClick={() => setMenuOpen(!menuOpen)}>
-                    {menuOpen ? <MenuOpenIcon /> : <MenuIcon />}
-                </button>
+                <NavLinks selected={selected} />
             </div>
         </nav>
     );
