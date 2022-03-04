@@ -27,9 +27,11 @@
 
     #me {
         height: 20rem;
+        max-height: 95vw;
         img {
             height: 100%;
             opacity: 0;
+            aspect-ratio: 1/1;
 
             -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
             -webkit-animation-delay: 0s;
@@ -50,6 +52,7 @@
     }
 
     #info {
+        max-width: 95vw;
         padding: 1rem 0 1rem 1.5rem;
         @media not print {
             border-left: 5px solid black;
@@ -83,7 +86,8 @@
                 a,
                 p {
                     overflow: hidden;
-                    white-space: nowrap;
+                    overflow-x: wrap;
+                    white-space: wrap;
                     max-width: 15rem;
                     -webkit-animation: rollout 2s; /* Safari, Chrome and Opera > 12.1 */
                     -webkit-animation-delay: 0s;
