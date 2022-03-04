@@ -4,11 +4,11 @@ import Home from "../images/ic_home_24px.png";
 import Linkedin from "../images/linkedin.png";
 import Github from "../images/Github.png";
 import Email from "../images/ic_email_24px.png";
-import "./header.scss";
+import "./about.scss";
 
-export const Header = () => {
+const About = () => {
     return (
-        <div id="header">
+        <div id="about">
             <div id="info">
                 <ul>
                     <li>
@@ -61,3 +61,5 @@ export const Header = () => {
         </div>
     );
 };
+
+export default About;

@@ -1,8 +1,18 @@
-import * as React from "react";
+import React, { useState } from "react";
 import "./nav.scss";
-import { pages } from "../data/pages";
+import { globalHistory } from "@reach/router";
+import { Link } from "gatsby";
+import { useEffect } from "react";
 
-export const Nav = ({ changeSelected, selectedPage }) => {
+export const Nav = () => {
+    const [selected, setSelected] = useState(globalHistory.location.pathname);
+
+    useEffect(() => {
+        return globalHistory.listen(({ location: { pathname } }) => {
+            setSelected(pathname);
+        });
+    }, [setSelected]);
+
     return (
         <nav>
             <div id="title">
@@ -10,26 +20,14 @@ export const Nav = ({ changeSelected, selectedPage }) => {
                 <h2>Software Developer</h2>
             </div>
             <ul>
-                <li className={selectedPage === pages.HOME ? "selected" : ""}>
-                    <button onClick={changeSelected(pages.HOME)}>Home</button>
+                <li className={selected === "/" ? "selected" : ""}>
+                    <Link to="/">Home</Link>
                 </li>
-                <li
-                    className={
-                        selectedPage === pages.EXPERIENCE ? "selected" : ""
-                    }
-                >
-                    <button onClick={changeSelected(pages.EXPERIENCE)}>
-                        Experience
-                    </button>
+                <li className={selected === "/experience" ? "selected" : ""}>
+                    <Link to="/experience">Experience</Link>
                 </li>
-                <li
-                    className={
-                        selectedPage === pages.PROJECTS ? "selected" : ""
-                    }
-                >
-                    <button onClick={changeSelected(pages.PROJECTS)}>
-                        Projects
-                    </button>
+                <li className={selected === "/projects" ? "selected" : ""}>
+                    <Link to="/projects">Projects</Link>
                 </li>
             </ul>
         </nav>

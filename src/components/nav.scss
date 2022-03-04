@@ -62,19 +62,22 @@ nav {
                 justify-content: center;
 
                 &.selected {
-                    button {
+                    button,
+                    a {
                         color: $highlight-color;
                     }
                 }
 
-                button {
+                button,
+                a {
                     margin: 0;
                     padding: 0;
                     border: none;
                     background-color: transparent;
                 }
 
-                button {
+                button,
+                a {
                     font-size: 1.2rem;
                     vertical-align: middle;
                     height: 100%;

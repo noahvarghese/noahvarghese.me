@@ -4,21 +4,12 @@ import "../fonts/Roboto/Roboto.css";
 import "./index.scss";
 import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
-import { HomeComponent } from "../components/home";
-import { Experience } from "../components/experience";
-import { Projects } from "../components/projects";
 import { Nav } from "../components/nav";
-import { Header } from "../components/header";
-import { pages } from "../data/pages";
+import About from "../components/about";
+import { proficient, conversant } from "../data/technical_skills";
+import interpersonal_skills from "../data/interpersonal_skills";
 
 const IndexPage = () => {
-    const [selectedPage, changeSelectedPage] = React.useState(pages.HOME);
-
-    const changeSelected = (page) => (e) => {
-        e.preventDefault();
-        changeSelectedPage(page);
-    };
-
     return (
         <>
             <header>
@@ -30,24 +21,62 @@ const IndexPage = () => {
                         content="width=device-width, initial-scale=1"
                     ></meta>
                 </Helmet>
-                <Nav
-                    changeSelected={changeSelected}
-                    selectedPage={selectedPage}
-                />
+                <Nav />
             </header>
             <main>
-                <div id="body">
-                    <Header />
-                    {selectedPage === pages.PROJECTS ? (
-                        <Projects />
-                    ) : selectedPage === pages.EXPERIENCE ? (
-                        <Experience />
-                    ) : (
-                        <HomeComponent />
-                    )}
+                <About />
+                <div id="message">
+                    <p>
+                        Hi! Welcome to my website, whether you're looking for
+                        someone to jumpstart your next venture, find out more
+                        about me, or looking to hire, feel free to look around!
+                    </p>
                 </div>
-                <Footer />
+                <div id="skills">
+                    <div id="stack">
+                        <div id="education">
+                            <h3>Education</h3>
+                            <ul>
+                                <li>
+                                    <p>Adv. Diploma - Software Development</p>
+                                    <p>Mohawk College</p>
+                                    <p>2022</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="interpersonal">
+                            <h3>Interpersonal Skills</h3>
+                            <ul>
+                                {interpersonal_skills.map((skill, index) => (
+                                    <li key={index}>{skill}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="technical">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>
+                                <p>Proficient In:</p>
+                                <ul>
+                                    {proficient.map((skill, index) => (
+                                        <li key={index}>{skill.name}</li>
+                                    ))}
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Conversant In:</p>
+                                <ul>
+                                    {conversant.map((skill, index) => (
+                                        <li key={index}>{skill.name}</li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </main>
+            <Footer />
         </>
     );
 };

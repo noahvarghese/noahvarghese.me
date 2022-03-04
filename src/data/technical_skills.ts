@@ -1,14 +1,14 @@
-export enum SkillLevel {
+enum SkillLevel {
     PROFICIENT = 0,
     CONVERSANT = 1,
 }
 
-export interface SkillAttributes {
+interface SkillAttributes {
     name: string;
     level: SkillLevel;
 }
 
-export class Skill implements SkillAttributes {
+class Skill implements SkillAttributes {
     public name: string;
     public level: SkillLevel;
 
@@ -18,7 +18,7 @@ export class Skill implements SkillAttributes {
     }
 }
 
-export const technical_skills = [
+const technical_skills = [
     new Skill("Object Oriented Programming", SkillLevel.PROFICIENT),
     new Skill("Test Driven Development", SkillLevel.PROFICIENT),
     new Skill("Test Automation", SkillLevel.PROFICIENT),
@@ -45,3 +45,10 @@ export const technical_skills = [
     new Skill("Scripting (Python, PHP)", SkillLevel.CONVERSANT),
     new Skill("Shell Scripting (Bash)", SkillLevel.CONVERSANT),
 ];
+
+export const conversant = technical_skills.filter(
+    (skill) => skill.level === SkillLevel.CONVERSANT
+);
+export const proficient = technical_skills.filter(
+    (skill) => skill.level === SkillLevel.PROFICIENT
+);

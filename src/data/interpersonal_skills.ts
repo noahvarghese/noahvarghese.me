@@ -1,4 +1,4 @@
-export const interpersonal_skills = [
+const interpersonal_skills = [
     "Leadership",
     "Time Management",
     "Teamwork",
@@ -8,3 +8,4 @@ export const interpersonal_skills = [
     "Desire to Learn",
     "Embrace Challenges",
 ];
+export default interpersonal_skills;

@@ -32,8 +32,8 @@ export const Project = ({ project }) => {
                         </div>
                         <div>
                             {Array.isArray(project.github) ? (
-                                project.github.map((g) => (
-                                    <h5 className="proj-url">
+                                project.github.map((g, i) => (
+                                    <h5 className="proj-url" key={"GitHub" + i}>
                                         <a
                                             target="_blank"
                                             href={`https://${g}`}
@@ -63,8 +63,8 @@ export const Project = ({ project }) => {
             </div>
             {Array.isArray(project.details) ? (
                 <ul className="details">
-                    {project.details.map((d) => (
-                        <li>{d}</li>
+                    {project.details.map((d, i) => (
+                        <li key={project.name + "details" + i}>{d}</li>
                     ))}
                 </ul>
             ) : (
