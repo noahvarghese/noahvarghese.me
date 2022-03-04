@@ -1,4 +1,5 @@
 import React from "react";
+import { useCallback } from "react";
 import { Helmet } from "react-helmet";
 import About from "../components/about";
 import Footer from "../components/footer";
@@ -12,6 +13,12 @@ import { proficient, conversant } from "../data/technical_skills";
 import "./resume.scss";
 
 const Resume = () => {
+    const print = useCallback(() => {
+        if (typeof window !== undefined) {
+            window.print();
+        }
+    }, []);
+
     return (
         <>
             <header>
@@ -33,7 +40,7 @@ const Resume = () => {
                         Check all options you would like to appear on the pdf,
                         then click 'Generate'.
                     </p>
-                    <button onClick={window.print}>Generate</button>
+                    <button onClick={print}>Generate</button>
                 </div>
                 <div id="resume">
                     <div id="main">
