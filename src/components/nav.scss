@@ -2,19 +2,12 @@
 
 nav {
     max-width: 100%;
-    @media not print {
-        margin-bottom: 8rem;
-    }
-    @media print {
-        margin-bottom: 2rem;
-    }
 
     @media only screen and (min-width: 949px) {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        height: 4rem;
-        align-items: flex-start;
+        // height: 4rem;
         justify-content: space-between;
     }
 
@@ -29,12 +22,23 @@ nav {
     }
 
     @media print {
+        margin-bottom: 2rem;
+        align-items: flex-start;
         ul {
             display: none;
         }
     }
 
     @media not print {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 10;
+        align-items: center;
+        padding: 2rem;
+        margin-bottom: 6rem;
+        box-shadow: 4px 8px 8px rgba(44, 44, 44, 0.2);
+
         ul {
             display: flex;
             height: 100%;

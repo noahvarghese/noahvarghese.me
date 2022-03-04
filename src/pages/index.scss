@@ -2,8 +2,12 @@
 
 @media not print {
     html {
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
         font-size: 18px;
-        margin: 2rem;
     }
 }
 
@@ -80,7 +84,7 @@ h4 {
 }
 @media not print {
     main {
-        padding-bottom: 8rem;
+        padding: 0 2rem 8rem 2rem;
     }
 }
 
