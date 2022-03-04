@@ -6,6 +6,7 @@ nav {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    gap: 1rem;
     justify-content: space-between;
 
     #title {
