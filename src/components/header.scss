@@ -6,15 +6,21 @@
     flex-wrap: wrap-reverse;
     justify-content: space-between;
     gap: 2rem;
-    margin-bottom: 5rem;
+    @media not print {
+        margin-bottom: 5rem;
+    }
+    @media print {
+        margin-bottom: 2rem;
+    }
+
+    align-items: center;
 
     @media only screen and (min-width: 769px) {
-        align-items: flex-end;
+        justify-content: space-between;
     }
 
     @media only screen and (max-width: 768px) {
         justify-content: center;
-        align-items: center;
     }
 
     #me {

@@ -1,5 +1,11 @@
 @import "../styles/fadein.scss";
 
+@media print {
+    #message {
+        display: none;
+    }
+}
+
 #message {
     font-weight: bold;
     font-size: 1.25rem;

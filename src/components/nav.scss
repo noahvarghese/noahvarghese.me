@@ -2,7 +2,12 @@
 
 nav {
     max-width: 100%;
-    margin-bottom: 8rem;
+    @media not print {
+        margin-bottom: 8rem;
+    }
+    @media print {
+        margin-bottom: 2rem;
+    }
 
     @media only screen and (min-width: 949px) {
         display: flex;
@@ -23,58 +28,66 @@ nav {
         }
     }
 
-    ul {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-
-        @media only screen and (max-width: 948px) {
-            margin-top: 2rem;
+    @media print {
+        ul {
+            display: none;
         }
+    }
 
-        li {
-            height: 100%;
-            display: inline-block;
-            min-width: min-content;
-            padding: 0 2rem;
-            max-width: 30vw;
-            text-align: center;
+    @media not print {
+        ul {
             display: flex;
+            height: 100%;
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
+            justify-content: space-evenly;
 
-            &.selected {
-                button {
-                    color: $highlight-color;
-                }
+            @media only screen and (max-width: 948px) {
+                margin-top: 2rem;
             }
 
-            button {
-                margin: 0;
-                padding: 0;
-                border: none;
-                background-color: transparent;
-            }
-
-            button {
-                font-size: 1.2rem;
-                vertical-align: middle;
+            li {
                 height: 100%;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                display: inline-block;
+                min-width: min-content;
+                padding: 0 2rem;
+                max-width: 30vw;
                 text-align: center;
-                font-family: Roboto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                text-decoration: none;
-                transition: color 0.3s ease;
-                cursor: pointer;
+                &.selected {
+                    button {
+                        color: $highlight-color;
+                    }
+                }
 
-                &:hover {
-                    color: $highlight-color;
+                button {
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
+                }
+
+                button {
+                    font-size: 1.2rem;
+                    vertical-align: middle;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    font-family: Roboto;
+
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $highlight-color;
+                    }
                 }
             }
         }
