@@ -10,12 +10,43 @@
     }
     #resume {
         gap: 10rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         #main > div > h3 {
             &:not(:first-of-type) {
                 margin: 3rem 0;
             }
             &:first-of-type {
                 margin-bottom: 3rem;
+            }
+        }
+
+        #secondary {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 4rem;
+            max-width: 500px;
+
+            #education > h3 {
+                padding-bottom: 0.5rem;
+            }
+            :not(#education) > ul {
+                list-style-type: disc;
+                li {
+                    margin-left: 1.5rem;
+                    padding: 0.75rem 0 0 0.25rem;
+                }
+                ul {
+                    margin-left: 0.75rem;
+                }
+            }
+
+            #technical {
+                li {
+                    width: 200px;
+                }
             }
         }
     }
@@ -51,46 +82,17 @@
         #main > div > h3 {
             margin-bottom: 2rem;
         }
+        #secondary {
+            display: none;
+        }
     }
 }
 
 #resume {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
     #main {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         gap: 4rem;
-    }
-
-    #secondary {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        gap: 4rem;
-        max-width: 500px;
-
-        #education > h3 {
-            padding-bottom: 0.5rem;
-        }
-        :not(#education) > ul {
-            list-style-type: disc;
-            li {
-                margin-left: 1.5rem;
-                padding: 0.75rem 0 0 0.25rem;
-            }
-            ul {
-                margin-left: 0.75rem;
-            }
-        }
-
-        #technical {
-            li {
-                width: 200px;
-            }
-        }
     }
 }
