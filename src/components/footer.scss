@@ -5,14 +5,18 @@
 }
 @media not print {
     footer {
-        border-top: 1px solid #d3d3d3;
-        margin: 5rem 2rem 0 2rem;
-        padding: 2rem 0;
+        #footerContent {
+            margin: 0 2rem;
+            border-top: 1px solid #d3d3d3;
+            padding: 2rem 0;
+            width: calc(100% - 4rem);
+            display: flex;
+            justify-content: center;
+        }
+        margin-top: 5rem;
+        width: 100%;
         background-color: white;
-        display: flex;
-        justify-content: center;
         position: fixed;
         bottom: 0;
-        width: calc(100% - 4rem);
     }
 }
