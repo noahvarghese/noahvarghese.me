@@ -26,6 +26,18 @@ export interface ExperienceAttributes {
 
 export const experience: ExperienceAttributes[] = [
     {
+        title: "Web Developer",
+        company: "Freelance",
+        location: "Oakville ON, Canada",
+        start_date: { month: "October", year: 2020 },
+        end_date: "Present",
+        details: [
+            "Design, develop and host websites for small businesses",
+            "Create accessible, responsive, and functional user interfaces to allow visitors on any device to have the same perfect user experience",
+            "Tools used: React, NodeJS, ExpressJS, Typescript, MySQL, AWS",
+        ],
+    },
+    {
         title: "IT",
         company: "Oakville Windows & Doors Inc.",
         location: "Oakville ON, Canada",
@@ -36,18 +48,6 @@ export const experience: ExperienceAttributes[] = [
             "Implemented network configurations which boosted the network capabilities by 50%",
             "Research, identify and appraise emerging technologies, hardware, and software to provide strategic recomendations for continuous improvement",
             "Monitored and evaluated IT systems to ensure efficiency as well as the safety and security of data storage",
-        ],
-    },
-    {
-        title: "Web Developer",
-        company: "Freelance",
-        location: "Oakville ON, Canada",
-        start_date: { month: "October", year: 2020 },
-        end_date: "Present",
-        details: [
-            "Design, develop and host websites for small businesses",
-            "Create accessible, responsive, and functional user interfaces to allow visitors on any device to have the same perfect user experience",
-            "Tools used: React, NodeJS, ExpressJS, Typescript, MySQL, AWS",
         ],
     },
     {
