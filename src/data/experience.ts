@@ -47,7 +47,7 @@ export const experience: ExperienceAttributes[] = [
         details: [
             "Design, develop and host websites for small businesses",
             "Create accessible, responsive, and functional user interfaces to allow visitors on any device to have the same perfect user experience",
-            "Tools used: React, NodeJS, Typescript, MySQL, AWS",
+            "Tools used: React, NodeJS, ExpressJS, Typescript, MySQL, AWS",
         ],
     },
     {
