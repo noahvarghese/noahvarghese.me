@@ -13,7 +13,7 @@ const Projects = () => {
             <header>
                 <Helmet>
                     <meta charset="utf-8" />
-                    <title>Noah Varghese &midot;</title>
+                    <title>Noah Varghese &middot; Projects</title>
                     <meta
                         name="viewport"
                         content="width=device-width, initial-scale=1"
