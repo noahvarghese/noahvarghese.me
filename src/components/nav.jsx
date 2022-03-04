@@ -86,7 +86,7 @@ const Nav = () => {
                         // if the current size is medium or smaller
                         Sizes.indexOf(size) >= Sizes.indexOf("MD")
                             ? "none"
-                            : "flex",
+                            : "block",
                 }}
             >
                 <NavLinks selected={selected} />
