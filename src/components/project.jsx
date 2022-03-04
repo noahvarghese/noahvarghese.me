@@ -1,11 +1,12 @@
 import * as React from "react";
 import "./project.scss";
+import "../styles/entry.scss";
 import WWW from "../images/ic_public_24px.png";
 import GH from "../images/Github.png";
 
 export const Project = ({ project }) => {
     return (
-        <div className="project">
+        <div className="project entry">
             <div className="proj-header">
                 <h4 className="proj-name">{project.name}</h4>
                 <div className="proj-url-container">

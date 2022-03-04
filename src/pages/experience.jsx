@@ -5,7 +5,6 @@ import Footer from "../components/footer";
 import { Nav } from "../components/nav";
 import { Position } from "../components/position";
 import { experience } from "../data/experience";
-import "./experience.scss";
 
 const Experience = () => {
     return (

@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 import { Project } from "../components/project";
 import { Nav } from "../components/nav";
 import { projects } from "../data/projects";
-import "./projects.scss";
+import "../styles/entry.scss";
 
 const Projects = () => {
     return (
