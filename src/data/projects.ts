@@ -21,7 +21,7 @@ export const projects: ProjectAttributes[] = [
             "Full stack web app",
             "Decoupled client and server both written in TypeScript",
             "Automated testing performed in CI/CD pipeline via GitHub Actions",
-            "Client written in react, utilizes functional and class based components",
+            "Client written in React, utilizes functional and class based components",
             "Utilizes React's Context API",
             "Uses Material UI component library",
             "RESTful API design",
