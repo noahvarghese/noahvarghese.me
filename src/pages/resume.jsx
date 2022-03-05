@@ -47,18 +47,29 @@ const Resume = () => {
                         <div id="experience">
                             <h3>Experience</h3>
                             {experience.map((exp, index) => (
-                                <Position key={index} job={exp} />
+                                <div
+                                    key={"position" + index}
+                                    className="select"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        defaultChecked={true}
+                                    />
+                                    <Position job={exp} />
+                                </div>
                             ))}
                         </div>
                         <div id="projects">
                             <h3>Projects</h3>
-                            {projects ? (
-                                projects.map((proj, index) => (
-                                    <Project key={index} project={proj} />
-                                ))
-                            ) : (
-                                <h4>Coming Soon</h4>
-                            )}
+                            {projects.map((proj, index) => (
+                                <div key={"proj" + index} className="select">
+                                    <input
+                                        type="checkbox"
+                                        defaultChecked={true}
+                                    />
+                                    <Project project={proj} />
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div id="secondary">

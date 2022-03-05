@@ -5,7 +5,7 @@ import "./project.scss";
 
 const Project = ({ project }) => {
     return (
-        <div className="project entry">
+        <div className="project">
             <div className="proj-header">
                 <h4 className="proj-name">{project.name}</h4>
                 <div className="proj-url-container">

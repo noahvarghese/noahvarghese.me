@@ -24,7 +24,9 @@ const Experience = () => {
                 <About />
                 <h3>Experience</h3>
                 {experience.map((exp, index) => (
-                    <Position key={index} job={exp} />
+                    <div key={"position" + index} className="entry">
+                        <Position job={exp} />
+                    </div>
                 ))}
             </main>
             <Footer />

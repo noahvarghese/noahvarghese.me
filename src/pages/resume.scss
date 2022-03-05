@@ -13,12 +13,17 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        #main > div > h3 {
-            &:not(:first-of-type) {
-                margin: 3rem 0;
+        #main {
+            & > div > div > input:not(:checked) + div {
+                display: none;
             }
-            &:first-of-type {
-                margin-bottom: 3rem;
+            & > div > h3 {
+                &:not(:first-of-type) {
+                    margin: 2rem 0;
+                }
+                &:first-of-type {
+                    margin-bottom: 2rem;
+                }
             }
         }
 
@@ -79,11 +84,23 @@
 
     #resume {
         gap: 4rem;
+
         #main > div > h3 {
             margin-bottom: 2rem;
         }
+
         #secondary {
             display: none;
+        }
+
+        #main > div > .select {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-left: -2.75rem;
+            input {
+                margin-top: -1rem;
+            }
         }
     }
 }
@@ -94,5 +111,22 @@
         flex-direction: column;
         flex-wrap: nowrap;
         gap: 4rem;
+        & > div > .select {
+            max-width: 95%;
+            .project,
+            .position {
+                width: 40rem;
+                max-width: 90%;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                padding-bottom: 2rem;
+            }
+            &:not(:last-of-type) {
+                .project,
+                .position {
+                    border-bottom: 1px solid #d3d3d3;
+                }
+            }
+        }
     }
 }

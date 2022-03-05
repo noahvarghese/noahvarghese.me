@@ -27,7 +27,7 @@ export const Position = ({ job }) => {
     }
 
     return (
-        <div className="position entry">
+        <div className="position">
             <div className="job-header">
                 <h4 className="job-title">{job.title}</h4>
                 <h4 className="company">{job.company}</h4>

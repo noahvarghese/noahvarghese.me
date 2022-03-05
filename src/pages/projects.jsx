@@ -25,7 +25,9 @@ const Projects = () => {
                 <h3>Projects</h3>
                 {projects ? (
                     projects.map((proj, index) => (
-                        <Project key={index} project={proj} />
+                        <div key={"project" + index} className="entry">
+                            <Project project={proj} />
+                        </div>
                     ))
                 ) : (
                     <h4>Coming Soon</h4>
