@@ -20,17 +20,22 @@ export const projects: ProjectAttributes[] = [
             "Paperless employee onboarding tool targeted at small businesses/restaurants",
             "Full stack web app",
             "Decoupled client and server both written in TypeScript",
-            "Automated testing performed in CI/CD pipeline via GitHub Actions",
+            "Automated testing performed in CI/CD pipeline via GitHub Actions, as well as runs via precommit hook",
             "Client written in React, utilizes functional and class based components",
-            "Utilizes React's Context API",
-            "Uses Material UI component library",
             "RESTful API design",
             "API designed/documented via OpenAPI and Swagger",
             "API running on a ExpressJS/NodeJS server hosted using AWS Elastic Beanstalk",
             "MySQL database running on AWS RDS",
-            "Utilized Test Driven Development (TDD)",
-            "Both client and server use Jest to provide unit testing",
         ],
+    },
+    {
+        name:"@noahvarghese/get_j_opts",
+        url: "npmjs.com/package/@noahvarghese/get_j_opts",
+        github: "GitHub.com/noahvarghese/get_j_opts",
+        details: [
+            "NPM package providing validation of JSON object",
+            "Demonstrates basic comprehension of open source licensing as evidenced by usage of software licensed under the MIT license"
+        ]
     },
     {
         name: "@noahvarghese/react-components",
@@ -79,23 +84,6 @@ export const projects: ProjectAttributes[] = [
             "Utilizes JSON Web Tokens (JWTs) to share security info (instead of cookies)",
             "API that provides CRUD operations on a user object, with autentication routes",
             "Written in PHP with a MySQL database",
-        ],
-    },
-    {
-        name: "Vue Grading App",
-        url: "GitHub.com/noahvarghese/vue-grading-app",
-        details: [
-            "Basic Vue app without usage of NPM or vue-cli",
-            "Explores state management",
-            "Provides a server to serve the HTML page",
-        ],
-    },
-    {
-        name: "Todo - React",
-        url: "GitHub.com/noahvarghese/todo",
-        details: [
-            "Basic React App using create-react-app",
-            "Basic state management",
         ],
     },
 ];
