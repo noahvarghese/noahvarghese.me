@@ -60,7 +60,6 @@ export const experience: ExperienceAttributes[] = [
             "WebSan Solutions is a certified Microsoft partner, and the larget hosting provider for Microsoft Dynamics",
             "Interface with QA and other teams to add automated integration and end to end tests to existing products",
             "Sped up SDLC as having automated tests in place helped to catch bugs before the features reached the maintenance phase",
-            "Set up QA Automation framework for existing product, thereby speeding up release cycles",
             "Used Selenium Web Driver for automated browser testing and end-to-end tests",
             "Utilized Cucumber/Gherkin for cross team communication of use cases and bugs",
             "Automated testing implemented using a combination of C# / .NET Core, Selenium, SpecFlow (Cucumber), JavaScript, MsSQL",
