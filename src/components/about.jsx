@@ -4,6 +4,7 @@ import Home from "../images/ic_home_24px.png";
 import Linkedin from "../images/linkedin.png";
 import Github from "../images/Github.png";
 import Email from "../images/ic_email_24px.png";
+import Phone from "../images/Phone.svg";
 import "./about.scss";
 
 const About = () => {
@@ -52,6 +53,13 @@ const About = () => {
                         >
                             varghese.noah@gmail.com
                         </a>
+                    </li>
+
+                    <li style={{ display: "none" }}>
+                        <div className="infoImgContainer">
+                            <Phone />
+                        </div>
+                        <a href="" target="_blank" rel="noreferrer"></a>
                     </li>
                 </ul>
             </div>
