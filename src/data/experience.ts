@@ -46,7 +46,7 @@ export const experience: ExperienceAttributes[] = [
         details: [
             "Headed the installation of desktop computers and a server to increase office capacity",
             "Implemented network configurations which boosted the network capabilities by 50%",
-            "Research, identify and appraise emerging technologies, hardware, and software to provide strategic recomendations for continuous improvement",
+            "Research, identify and appraise emerging technologies, hardware, and software to provide strategic recommendations for continuous improvement",
             "Monitored and evaluated IT systems to ensure efficiency as well as the safety and security of data storage",
         ],
     },
