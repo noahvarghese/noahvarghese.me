@@ -1,7 +1,7 @@
 export interface ProjectAttributes {
     name: string;
     // If project is not launched, use github url here
-    url: string;
+    url?: string;
     github?: string | string[];
     tags?: string[];
     details: string | string[];
@@ -29,6 +29,16 @@ export const projects: ProjectAttributes[] = [
         ],
     },
     {
+        name: "Contact API",
+        github: "GitHub.com/noahvarghese/contact-api",
+        details: [
+            "Email service to support unauthenticated forms",
+            "Utilized Golang's standard library to send templated emails on a per host basis",
+            "Template and host management done via MySQL database",
+            "Utlized AWS SAM CLI, Lambda, and API Gateway to create and host this in a cost effective manner",
+        ],
+    },
+    {
         name: "@noahvarghese/get_j_opts",
         url: "npmjs.com/package/@noahvarghese/get_j_opts",
         github: "GitHub.com/noahvarghese/get_j_opts",
@@ -51,7 +61,7 @@ export const projects: ProjectAttributes[] = [
     },
     {
         name: "Restaurant Locator",
-        url: "GitHub.com/noahvarghese/restaurant",
+        github: "GitHub.com/noahvarghese/restaurant",
         details: [
             "Single page application using vanilla JS, HTML and CSS",
             "Consumes Yelp's RESTful API",
@@ -61,7 +71,7 @@ export const projects: ProjectAttributes[] = [
     },
     {
         name: "CryptoTool",
-        url: "GitHub.com/noahvarghese/cryptoTool",
+        github: "GitHub.com/noahvarghese/cryptoTool",
         details: [
             "Web API to encrypt/decrypt a string using OpenSSL",
             "Written in PHP",
@@ -70,7 +80,7 @@ export const projects: ProjectAttributes[] = [
     },
     {
         name: "VPN Configuration Generator",
-        url: "GitHub.com/noahvarghese/vpnConfigGen",
+        github: "GitHub.com/noahvarghese/vpnConfigGen",
         details: [
             "Automate generation of OpenVPN configuration files",
             "Web API with frontend",
@@ -79,7 +89,7 @@ export const projects: ProjectAttributes[] = [
     },
     {
         name: "Authentication API",
-        url: "GitHub.com/noahvarghese/userApi",
+        github: "GitHub.com/noahvarghese/userApi",
         details: [
             "Utilizes JSON Web Tokens (JWTs) to share security info (instead of cookies)",
             "API that provides CRUD operations on a user object, with autentication routes",
