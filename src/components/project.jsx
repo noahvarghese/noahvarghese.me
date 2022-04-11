@@ -8,20 +8,25 @@ const Project = ({ project }) => {
         <div className="project">
             <div className="proj-header">
                 <h4 className="proj-name">{project.name}</h4>
-                <div className="proj-url-container">
-                    <div className="proj-url-img-container">
-                        <img alt="globe symbolizing world wide web" src={WWW} />
+                {project.url ? (
+                    <div className="proj-url-container">
+                        <div className="proj-url-img-container">
+                            <img
+                                alt="globe symbolizing world wide web"
+                                src={WWW}
+                            />
+                        </div>
+                        <h4 className="proj-url">
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={`https://${project.url}`}
+                            >
+                                {project.url}
+                            </a>
+                        </h4>
                     </div>
-                    <h4 className="proj-url">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={`https://${project.url}`}
-                        >
-                            {project.url}
-                        </a>
-                    </h4>
-                </div>
+                ) : null}
                 {project.github ? (
                     <div className="proj-url-container">
                         <div className="proj-url-img-container">
@@ -43,6 +48,16 @@ const Project = ({ project }) => {
                                         </a>
                                     </h5>
                                 ))
+                            ) : !project.url ? (
+                                <h4 className="proj-url">
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href={`https://${project.github}`}
+                                    >
+                                        {project.github}
+                                    </a>
+                                </h4>
                             ) : (
                                 <h5 className="proj-url">
                                     <a
