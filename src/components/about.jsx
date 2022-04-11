@@ -59,7 +59,9 @@ const About = () => {
                         <div className="infoImgContainer">
                             <Phone />
                         </div>
-                        <a href="" target="_blank" rel="noreferrer"></a>
+                        <a href="invalid" target="_blank" rel="noreferrer">
+                            Please enter phone number
+                        </a>
                     </li>
                 </ul>
             </div>
